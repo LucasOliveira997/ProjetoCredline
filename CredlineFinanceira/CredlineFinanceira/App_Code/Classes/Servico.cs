@@ -5,19 +5,18 @@ using System.Web;
 
 namespace CredlineFinanceira.App_Code.Classes
 {
-    public class Loja
+    public class Servico
     {
-        public int CodigoLOJ { get; set; }
-        public string CnpjLOJ { get; set; }
-        public string IdLOJ { get; set; }
-        public string EnderecoLOJ { get; set; }
-       
+        public int CodigoSER { get; set; }
+        public string NomeSER { get; set; }
+        public string TipoSER { get; set; }
 
-        public Loja()
+        public Servico()
         {
             //
             // TODO: Add constructor logic here
             //
         }
+
     }
 }
