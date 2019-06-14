@@ -1,4 +1,4 @@
-﻿<%@ Page Language="C#" AutoEventWireup="true" CodeBehind="ListarCliente.aspx.cs" Inherits="CredlineFinanceira.Paginas.Listar.ListarCliente" %>
+﻿<%@ Page Language="C#" AutoEventWireup="true" CodeBehind="ListarUsuario.aspx.cs" Inherits="CredlineFinanceira.Paginas.Listar.ListarUsuario" %>
 
 <!DOCTYPE html>
 
