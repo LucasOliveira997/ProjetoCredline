@@ -7,6 +7,7 @@ namespace CredlineFinanceira.App_Code.Classes
 {
     public class Loja
     {
+        public int CodigoLOJ { get; set; }
         public string CnpjLOJ { get; set; }
         public string IdLOJ { get; set; }
         public string EnderecoLOJ { get; set; }

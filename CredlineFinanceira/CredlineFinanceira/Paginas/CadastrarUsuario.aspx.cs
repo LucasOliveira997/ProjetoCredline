@@ -19,23 +19,23 @@ namespace CredlineFinanceira.Paginas
         }
         protected void btnSalvar_Click(object sender, EventArgs e)
         {
-            Usuario usuario = new Usuario();
-            usuario.Nome = txtNome.Text;
-            usuario.Telefone = Convert.ToInt32(txtTelefone.Text);
-            usuario.Celular = Convert.ToInt32(txtCelular.Text);
-            usuario.Endereco = txtEndereco.Text;
-            usuario.DataContrato = Convert.ToDateTime(txtDataContrato.Text);
-            usuario.Cpf = Convert.ToInt32(txtCpf.Text);
-            usuario.Login = txtLogin.Text;
-            usuario.Senha = txtSenha.Text;
-            usuario.Cargo = Convert.ToBoolean(dpdCargo.SelectedItem.Value);
-            usuario.IdLoja = txtIdLoja.Text;
+            Usuario cliente = new Usuario();
+            cliente.Nome = txtNome.Text;
+            cliente.Telefone = Convert.ToInt32(txtTelefone.Text);
+            cliente.Celular = Convert.ToInt32(txtCelular.Text);
+            cliente.Endereco = txtEndereco.Text;
+            cliente.DataContrato = Convert.ToDateTime(txtDataContrato.Text);
+            cliente.Cpf = Convert.ToInt32(txtCpf.Text);
+            cliente.Login = txtLogin.Text;
+            cliente.Senha = txtSenha.Text;
+            cliente.Cargo = Convert.ToBoolean(dpdCargo.SelectedItem.Value);
+            cliente.CodigoLOJ = Convert.ToInt32(dpdLoja.SelectedItem.Value);
 
             
 
 
             UsuarioBD bd = new UsuarioBD();
-            if (bd.Insert(usuario))
+            if (bd.Insert(cliente))
             {
                 lblMensagem.Text = "Usuario cadastrado com sucesso";
 
@@ -48,6 +48,7 @@ namespace CredlineFinanceira.Paginas
                 txtLogin.Text = "";
                 txtSenha.Text = "";
                 dpdCargo.Text = "";
+                dpdLoja.Text = "";
                 txtNome.Focus();
             }
             else
@@ -57,5 +58,6 @@ namespace CredlineFinanceira.Paginas
 
         }
 
+        
     }
 }

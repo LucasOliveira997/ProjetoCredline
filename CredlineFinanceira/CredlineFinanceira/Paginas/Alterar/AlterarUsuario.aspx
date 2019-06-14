@@ -1,4 +1,4 @@
-﻿<%@ Page Language="C#" AutoEventWireup="true" CodeBehind="CadastrarCliente.aspx.cs" Inherits="CredlineFinanceira.Paginas.CadastrarCliente" %>
+﻿<%@ Page Language="C#" AutoEventWireup="true" CodeBehind="AlterarUsuario.aspx.cs" Inherits="CredlineFinanceira.Paginas.Alterar.AlterarUsuario" %>
 
 <!DOCTYPE html>
 
@@ -6,11 +6,6 @@
 <head runat="server">
 <meta http-equiv="Content-Type" content="text/html; charset=utf-8"/>
     <title></title>
-    <style type="text/css">
-        #Select1 {
-            width: 124px;
-        }
-    </style>
 </head>
 <body>
     <form id="form1" runat="server">
