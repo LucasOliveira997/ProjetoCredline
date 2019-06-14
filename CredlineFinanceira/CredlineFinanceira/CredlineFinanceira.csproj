@@ -239,12 +239,10 @@
     <Compile Include="App_Code\Classes\Cliente.cs" />
     <Compile Include="App_Code\Classes\Emprestimo.cs" />
     <Compile Include="App_Code\Classes\Loja.cs" />
-    <Compile Include="App_Code\Classes\Parcela.cs" />
     <Compile Include="App_Code\Classes\Taxa.cs" />
     <Compile Include="App_Code\Persistencia\UsuarioBD.cs" />
     <Compile Include="App_Code\Persistencia\LojaBD.cs" />
     <Compile Include="App_Code\Persistencia\ClienteBD.cs" />
-    <Compile Include="App_Code\Persistencia\ParcelaBD.cs" />
     <Compile Include="App_Code\Persistencia\TaxaBD.cs" />
     <Compile Include="App_Code\Persistencia\EmprestimoBD.cs" />
     <Compile Include="App_Start\BundleConfig.cs" />

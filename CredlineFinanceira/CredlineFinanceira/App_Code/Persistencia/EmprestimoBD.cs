@@ -16,15 +16,19 @@ namespace CredlineFinanceira.App_Code.Persistencia
         {
             System.Data.IDbConnection objConexao;
             System.Data.IDbCommand objCommand;
-            string sql = "INSERT INTO emp_emprestimo (tax_codigo, cli_codigo, loj_id, emp_data, emp_valor, emp_tipo) VALUES(?Taxa, ?Cliente, ?LojaID, ?DataEMP, ?ValorEMP, ?TipoEMP)";
+            string sql = "INSERT INTO emp_emprestimo (tax_codigo, cli_codigo, loj_codigo, emp_data, emp_tipo, emp_valor, emp_qntdParcela, emp_valorParcela, emp_status) VALUES(?Taxa, ?Cliente, ?CodigoLOJ, ?DataEMP, ?TipoEMP, ?ValorEMP, ?QntdParcela, ?ValorParcela, ?Status)";
             objConexao = Mapped.Connection();
             objCommand = Mapped.Command(sql, objConexao);
             objCommand.Parameters.Add(Mapped.Parameter("?Taxa", emprestimo.Taxa));
             objCommand.Parameters.Add(Mapped.Parameter("?Cliente", emprestimo.Cliente));
-            objCommand.Parameters.Add(Mapped.Parameter("?LojaID", emprestimo.LojaID));
+            objCommand.Parameters.Add(Mapped.Parameter("?CodigoLOJ", emprestimo.CodigoLOJ));
             objCommand.Parameters.Add(Mapped.Parameter("?DataEMP", emprestimo.DataEMP));
-            objCommand.Parameters.Add(Mapped.Parameter("?ValorEMP", emprestimo.ValorEMP));
             objCommand.Parameters.Add(Mapped.Parameter("?TipoEMP", emprestimo.TipoEMP));
+            objCommand.Parameters.Add(Mapped.Parameter("?ValorEMP", emprestimo.ValorEMP));
+            objCommand.Parameters.Add(Mapped.Parameter("?QntdParcela", emprestimo.QntdParcela));
+            objCommand.Parameters.Add(Mapped.Parameter("?ValorParcela", emprestimo.ValorParcela));
+            objCommand.Parameters.Add(Mapped.Parameter("?Status", emprestimo.Status));
+
 
             objCommand.ExecuteNonQuery();
             objConexao.Close();

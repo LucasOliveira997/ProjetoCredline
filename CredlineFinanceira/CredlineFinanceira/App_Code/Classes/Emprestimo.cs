@@ -13,7 +13,10 @@ namespace CredlineFinanceira.App_Code.Classes
         public string TipoEMP { get; set; }
         public int Taxa { get; set; }
         public int Cliente { get; set; }
-        public string LojaID { get; set; }
+        public string CodigoLOJ { get; set; }
+        public int QntdParcela { get; set; }
+        public double ValorParcela { get; set; }
+        public string Status { get; set; }
 
         public Emprestimo()
         {

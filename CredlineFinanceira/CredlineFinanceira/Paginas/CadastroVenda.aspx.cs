@@ -24,11 +24,14 @@ namespace CredlineFinanceira.Paginas
 
             emprestimo.Taxa = Convert.ToInt32(txtTaxa.Text);
             emprestimo.Cliente = Convert.ToInt32(txtCliente.Text);
-            emprestimo.LojaID = txtLoja.Text;
+            emprestimo.CodigoLOJ = txtLoja.Text;
             emprestimo.DataEMP = Convert.ToDateTime(txtData.Text);
             emprestimo.ValorEMP = Convert.ToDouble(txtValor.Text);
             emprestimo.TipoEMP = txtTipo.Text;
-            
+            emprestimo.QntdParcela = Convert.ToInt32(dpdParcela.SelectedItem.Value);
+            emprestimo.ValorParcela = Convert.ToDouble(txtValorParcela.Text);
+            emprestimo.Status = txtStatus.Text;
+
 
             EmprestimoBD bd = new EmprestimoBD();
             if (bd.Insert(emprestimo))
@@ -41,6 +44,9 @@ namespace CredlineFinanceira.Paginas
                 txtTaxa.Text = "";
                 txtCliente.Text = "";
                 txtLoja.Text = "";
+                dpdParcela.Text = "";
+                txtValorParcela.Text = "";
+                txtStatus.Text = "";
                 txtTipo.Focus();
 
             }

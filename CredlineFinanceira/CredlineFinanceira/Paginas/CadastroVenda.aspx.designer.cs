@@ -103,6 +103,24 @@ namespace CredlineFinanceira.Paginas {
         protected global::System.Web.UI.WebControls.TextBox txtData;
         
         /// <summary>
+        /// Controle lblTipo.
+        /// </summary>
+        /// <remarks>
+        /// Campo gerado automaticamente.
+        /// Modificar a declaração do campo de movimento do arquivo de designer para o arquivo code-behind.
+        /// </remarks>
+        protected global::System.Web.UI.WebControls.Label lblTipo;
+        
+        /// <summary>
+        /// Controle txtTipo.
+        /// </summary>
+        /// <remarks>
+        /// Campo gerado automaticamente.
+        /// Modificar a declaração do campo de movimento do arquivo de designer para o arquivo code-behind.
+        /// </remarks>
+        protected global::System.Web.UI.WebControls.TextBox txtTipo;
+        
+        /// <summary>
         /// Controle lblValor.
         /// </summary>
         /// <remarks>
@@ -121,22 +139,58 @@ namespace CredlineFinanceira.Paginas {
         protected global::System.Web.UI.WebControls.TextBox txtValor;
         
         /// <summary>
-        /// Controle lblTipo.
+        /// Controle lblqntdParcela.
         /// </summary>
         /// <remarks>
         /// Campo gerado automaticamente.
         /// Modificar a declaração do campo de movimento do arquivo de designer para o arquivo code-behind.
         /// </remarks>
-        protected global::System.Web.UI.WebControls.Label lblTipo;
+        protected global::System.Web.UI.WebControls.Label lblqntdParcela;
         
         /// <summary>
-        /// Controle txtTipo.
+        /// Controle dpdParcela.
         /// </summary>
         /// <remarks>
         /// Campo gerado automaticamente.
         /// Modificar a declaração do campo de movimento do arquivo de designer para o arquivo code-behind.
         /// </remarks>
-        protected global::System.Web.UI.WebControls.TextBox txtTipo;
+        protected global::System.Web.UI.WebControls.DropDownList dpdParcela;
+        
+        /// <summary>
+        /// Controle lblValorParcela.
+        /// </summary>
+        /// <remarks>
+        /// Campo gerado automaticamente.
+        /// Modificar a declaração do campo de movimento do arquivo de designer para o arquivo code-behind.
+        /// </remarks>
+        protected global::System.Web.UI.WebControls.Label lblValorParcela;
+        
+        /// <summary>
+        /// Controle txtValorParcela.
+        /// </summary>
+        /// <remarks>
+        /// Campo gerado automaticamente.
+        /// Modificar a declaração do campo de movimento do arquivo de designer para o arquivo code-behind.
+        /// </remarks>
+        protected global::System.Web.UI.WebControls.TextBox txtValorParcela;
+        
+        /// <summary>
+        /// Controle lblStatus.
+        /// </summary>
+        /// <remarks>
+        /// Campo gerado automaticamente.
+        /// Modificar a declaração do campo de movimento do arquivo de designer para o arquivo code-behind.
+        /// </remarks>
+        protected global::System.Web.UI.WebControls.Label lblStatus;
+        
+        /// <summary>
+        /// Controle txtStatus.
+        /// </summary>
+        /// <remarks>
+        /// Campo gerado automaticamente.
+        /// Modificar a declaração do campo de movimento do arquivo de designer para o arquivo code-behind.
+        /// </remarks>
+        protected global::System.Web.UI.WebControls.TextBox txtStatus;
         
         /// <summary>
         /// Controle btnSalvar.
