@@ -171,6 +171,7 @@
     <Content Include="obj\Debug\DesignTimeResolveAssemblyReferencesInput.cache" />
     <Content Include="Paginas\Alterar\AlterarUsuario.aspx" />
     <Content Include="Paginas\CadastrarCliente.aspx" />
+    <Content Include="Paginas\CadastrarServico.aspx" />
     <Content Include="Paginas\Listar\ListarUsuario.aspx" />
     <Content Include="Paginas\Login\fonts\Asap-Regular.ttf" />
     <Content Include="Paginas\Login\fonts\Audiowide-Regular.ttf" />
@@ -236,14 +237,14 @@
     <Content Include="Site.Mobile.Master" />
   </ItemGroup>
   <ItemGroup>
-    <Content Include="App_Code\Classes\Servico.cs" />
+    <Compile Include="App_Code\Classes\Servico.cs" />
     <Compile Include="App_Code\Classes\Usuario.cs" />
     <Compile Include="App_Code\Mapped.cs" />
     <Compile Include="App_Code\Classes\Cliente.cs" />
     <Compile Include="App_Code\Classes\Emprestimo.cs" />
     <Compile Include="App_Code\Classes\Loja.cs" />
     <Compile Include="App_Code\Classes\Taxa.cs" />
-    <Content Include="App_Code\Persistencia\ServicoBD.cs" />
+    <Compile Include="App_Code\Persistencia\ServicoBD.cs" />
     <Compile Include="App_Code\Persistencia\UsuarioBD.cs" />
     <Compile Include="App_Code\Persistencia\LojaBD.cs" />
     <Compile Include="App_Code\Persistencia\ClienteBD.cs" />
@@ -312,6 +313,13 @@
     </Compile>
     <Compile Include="Paginas\CadastrarCliente.aspx.designer.cs">
       <DependentUpon>CadastrarCliente.aspx</DependentUpon>
+    </Compile>
+    <Compile Include="Paginas\CadastrarServico.aspx.cs">
+      <DependentUpon>CadastrarServico.aspx</DependentUpon>
+      <SubType>ASPXCodeBehind</SubType>
+    </Compile>
+    <Compile Include="Paginas\CadastrarServico.aspx.designer.cs">
+      <DependentUpon>CadastrarServico.aspx</DependentUpon>
     </Compile>
     <Compile Include="Paginas\CadastrarTaxa.aspx.cs">
       <DependentUpon>CadastrarTaxa.aspx</DependentUpon>

@@ -8,7 +8,7 @@ using System.Data;
 
 namespace CredlineFinanceira.App_Code.Persistencia
 {
-    public class Servico
+    public class ServicoBD
     {
         //métodos
         //insert
