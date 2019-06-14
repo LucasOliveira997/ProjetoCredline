@@ -1,4 +1,4 @@
-﻿<%@ Page Language="C#" AutoEventWireup="true" CodeBehind="CadastrarCliente.aspx.cs" Inherits="CredlineFinanceira.Paginas.CadastrarCliente" %>
+﻿<%@ Page Language="C#" AutoEventWireup="true" CodeBehind="CadastrarUsuario.aspx.cs" Inherits="CredlineFinanceira.Paginas.CadastrarUsuario" %>
 
 <!DOCTYPE html>
 
