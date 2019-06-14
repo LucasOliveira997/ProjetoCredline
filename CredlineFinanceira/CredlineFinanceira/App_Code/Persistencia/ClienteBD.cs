@@ -134,7 +134,8 @@ namespace CredlineFinanceira.App_Code.Persistencia
             objCommand.Dispose();
             objConexao.Dispose();
             return true;
-        }
+        }
+
 
         //construtor
         public ClienteBD()

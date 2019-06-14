@@ -21,7 +21,7 @@ namespace CredlineFinanceira.App_Code.Classes
         public string Login { get; set; }
         public string Senha { get; set; }
         public bool Cargo { get; set; }
-        public string IdLoja { get; set; }
+        public int CodigoLOJ { get; set; }
 
         public Usuario()
         {

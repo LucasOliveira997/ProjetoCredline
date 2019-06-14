@@ -17,9 +17,10 @@ namespace CredlineFinanceira.App_Code.Persistencia
         {
                 System.Data.IDbConnection objConexao;
                 System.Data.IDbCommand objCommand;
-                string sql = "INSERT INTO loj_loja( loj_cnpj, loj_id, loj_endereco) VALUES( ?CnpjLOJ, ?IdLOJ, ?EnderecoLOJ)";
+                string sql = "INSERT INTO loj_loja(loj_codigo, loj_cnpj, loj_id, loj_endereco) VALUES( ?CodigoLOJ, ?CnpjLOJ, ?IdLOJ, ?EnderecoLOJ)";
                 objConexao = Mapped.Connection();
                 objCommand = Mapped.Command(sql, objConexao);
+                objCommand.Parameters.Add(Mapped.Parameter("?CodigoLOJ", loja.CodigoLOJ));
                 objCommand.Parameters.Add(Mapped.Parameter("?CnpjLOJ", loja.CnpjLOJ));
                 objCommand.Parameters.Add(Mapped.Parameter("?IdLOJ", loja.IdLOJ));
                 objCommand.Parameters.Add(Mapped.Parameter("?EnderecoLOJ", loja.EnderecoLOJ));

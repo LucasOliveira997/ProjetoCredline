@@ -7,10 +7,10 @@
 // </gerado automaticamente>
 //------------------------------------------------------------------------------
 
-namespace CredlineFinanceira.Paginas {
+namespace CredlineFinanceira.Paginas.Alterar {
     
     
-    public partial class CadastrarUsuario {
+    public partial class AlterarUsuario {
         
         /// <summary>
         /// Controle form1.

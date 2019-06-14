@@ -169,6 +169,9 @@
     <Content Include="obj\Debug\CredlineFinanceira.dll" />
     <Content Include="obj\Debug\CredlineFinanceira.pdb" />
     <Content Include="obj\Debug\DesignTimeResolveAssemblyReferencesInput.cache" />
+    <Content Include="Paginas\Alterar\AlterarUsuario.aspx" />
+    <Content Include="Paginas\CadastrarCliente.aspx" />
+    <Content Include="Paginas\Listar\ListarUsuario.aspx" />
     <Content Include="Paginas\Login\fonts\Asap-Regular.ttf" />
     <Content Include="Paginas\Login\fonts\Audiowide-Regular.ttf" />
     <Content Include="bin\roslyn\csc.exe.config" />
@@ -186,7 +189,6 @@
     <Content Include="Paginas\Alterar\AlterarCliente.aspx" />
     <Content Include="Paginas\Alterar\AlterarLoja.aspx" />
     <Content Include="Paginas\CadastarLoja.aspx" />
-    <Content Include="Paginas\CadastrarCliente.aspx" />
     <Content Include="Paginas\CadastrarTaxa.aspx" />
     <Content Include="Paginas\CadastrarUsuario.aspx" />
     <Content Include="Paginas\CadastroVenda.aspx" />
@@ -290,6 +292,13 @@
     <Compile Include="Paginas\Alterar\AlterarLoja.aspx.designer.cs">
       <DependentUpon>AlterarLoja.aspx</DependentUpon>
     </Compile>
+    <Compile Include="Paginas\Alterar\AlterarUsuario.aspx.cs">
+      <DependentUpon>AlterarUsuario.aspx</DependentUpon>
+      <SubType>ASPXCodeBehind</SubType>
+    </Compile>
+    <Compile Include="Paginas\Alterar\AlterarUsuario.aspx.designer.cs">
+      <DependentUpon>AlterarUsuario.aspx</DependentUpon>
+    </Compile>
     <Compile Include="Paginas\CadastarLoja.aspx.cs">
       <DependentUpon>CadastarLoja.aspx</DependentUpon>
       <SubType>ASPXCodeBehind</SubType>
@@ -338,6 +347,13 @@
     </Compile>
     <Compile Include="Paginas\Listar\ListarLoja.aspx.designer.cs">
       <DependentUpon>ListarLoja.aspx</DependentUpon>
+    </Compile>
+    <Compile Include="Paginas\Listar\ListarUsuario.aspx.cs">
+      <DependentUpon>ListarUsuario.aspx</DependentUpon>
+      <SubType>ASPXCodeBehind</SubType>
+    </Compile>
+    <Compile Include="Paginas\Listar\ListarUsuario.aspx.designer.cs">
+      <DependentUpon>ListarUsuario.aspx</DependentUpon>
     </Compile>
     <Compile Include="Paginas\Login\Admin\Index.aspx.cs">
       <DependentUpon>Index.aspx</DependentUpon>
