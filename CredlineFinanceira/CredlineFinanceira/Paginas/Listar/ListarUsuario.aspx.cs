@@ -33,7 +33,7 @@ namespace CredlineFinanceira.Paginas.Listar
                 case "Alterar":
                     codigo = Convert.ToInt32(e.CommandArgument);
                     Session["ID"] = codigo;
-                    Response.Redirect("Alterar.aspx");
+                    Response.Redirect("../Alterar/AlterarUsuario.aspx");
                     break;
                 case "Deletar":
                     codigo = Convert.ToInt32(e.CommandArgument);
