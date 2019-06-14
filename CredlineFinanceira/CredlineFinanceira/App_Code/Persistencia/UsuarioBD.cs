@@ -101,7 +101,7 @@ namespace CredlineFinanceira.App_Code.Persistencia
         {
             System.Data.IDbConnection objConexao;
             System.Data.IDbCommand objCommand;
-            string sql = "UPDATE usu_usuario SET usu_nome=?nome, usu_telefone=?Telefone, usu_celular=?Celular, usu_endereco=?Endereco, usu_dataContrato=?DataContrato, usu_cpf=?Cpf, usu_login=?Login, usu_senha=?Senha, usu_cargo=?Cargo, loj_codigo=CodigoLOJ WHERE usu_codigo=?codigo";
+            string sql = "UPDATE usu_usuario SET usu_nome=?nome, usu_telefone=?Telefone, usu_celular=?Celular, usu_endereco=?Endereco, usu_dataContrato=?DataContrato, usu_cpf=?Cpf, usu_login=?Login, usu_senha=?Senha, usu_cargo=?Cargo, loj_codigo=?CodigoLOJ WHERE usu_codigo=?codigo";
             objConexao = Mapped.Connection();
             objCommand = Mapped.Command(sql, objConexao);
             objCommand.Parameters.Add(Mapped.Parameter("?Codigo", usuario.Codigo));
