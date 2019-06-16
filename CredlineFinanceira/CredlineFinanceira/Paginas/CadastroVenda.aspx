@@ -12,25 +12,22 @@
         <div>
               <asp:Label ID="lblCadastroV" runat="server" Text="Cadastro de Vendas"></asp:Label>
             <br />
-            <asp:Label ID="lblTaxa" runat="server" Text="Taxa:"></asp:Label>
-            <br />
-            <asp:TextBox ID="txtTaxa" runat="server"></asp:TextBox>
-            <br />
-            <asp:Label ID="lblCliente" runat="server" Text="Cpf do Cliente"></asp:Label>
-            <br />
-            <asp:TextBox ID="txtCliente" runat="server"></asp:TextBox>
-            <br />
-            <asp:Label ID="lblLoja" runat="server" Text="ID da Loja:"></asp:Label>
-            <br />
-            <asp:TextBox ID="txtLoja" runat="server"></asp:TextBox>
-            <br />
+           
             <asp:Label ID="lblData" runat="server" Text="Data:" ></asp:Label>
             <br />
             <asp:TextBox ID="txtData" runat="server" TextMode="DateTimeLocal"></asp:TextBox>
             <br />
+             <asp:Label ID="lblCliente" runat="server" Text="Cpf do Cliente:"></asp:Label>
+            <br />
+            <asp:DropDownList ID="dpdCliente" runat="server"></asp:DropDownList>
+            <br />
             <asp:Label ID="lblTipo" runat="server" Text="Tipo:"></asp:Label>
             <br />
             <asp:TextBox ID="txtTipo" runat="server"></asp:TextBox>
+            <br />
+             <asp:Label ID="lblTaxa" runat="server" Text="Taxa:"></asp:Label>
+            <br />
+            <asp:CheckBoxList ID="cblTaxa" runat="server"></asp:CheckBoxList>
             <br />
             <asp:Label ID="lblValor" runat="server" Text="Valor:"></asp:Label>
             <br />
@@ -38,12 +35,7 @@
             <br />
             <asp:Label ID="lblqntdParcela" runat="server" Text="Quantidade de Parcelas:"></asp:Label>
             <br />
-            <asp:DropDownList ID="dpdParcela" runat="server">
-                <asp:ListItem>1</asp:ListItem>
-                <asp:ListItem>2</asp:ListItem>
-                <asp:ListItem>3</asp:ListItem>
-                <asp:ListItem>4</asp:ListItem>
-              </asp:DropDownList>
+            <asp:TextBox ID="txtqntdParcela" runat="server"></asp:TextBox>
             <br />
             <asp:Label ID="lblValorParcela" runat="server" Text="Valor das Parcelas:"></asp:Label>
             <br />
@@ -52,6 +44,14 @@
             <asp:Label ID="lblStatus" runat="server" Text="Status:"></asp:Label>
             <br />
             <asp:TextBox ID="txtStatus" runat="server"></asp:TextBox>
+            <br />
+            <asp:Label ID="lblUsuario" runat="server" Text="Funcionário:"></asp:Label>
+            <br />
+            <asp:DropDownList ID="dpdUsuario" runat="server"></asp:DropDownList>
+            <br />
+             <asp:Label ID="lblLoja" runat="server" Text="Loja:"></asp:Label>
+            <br />
+            <asp:DropDownList ID="dpdLoja" runat="server"></asp:DropDownList>
             <br />
             <asp:Button ID="btnSalvar" runat="server" Text="Salvar" OnClick="btnSalvar_Click" />
             <br />
