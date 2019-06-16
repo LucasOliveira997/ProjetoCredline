@@ -11,7 +11,9 @@ namespace CredlineFinanceira.App_Code.Classes
         public string CnpjLOJ { get; set; }
         public string IdLOJ { get; set; }
         public string EnderecoLOJ { get; set; }
-       
+
+        public List<Usuario> Usuarios { get; set; }
+
 
         public Loja()
         {

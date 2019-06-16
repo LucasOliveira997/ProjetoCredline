@@ -18,6 +18,10 @@
             <br />
             <asp:LinkButton ID="lbSair" runat="server" OnClick="lbSair_Click">Sair</asp:LinkButton>
         </div>
+        <br />
+        <div class="container">
+        <asp:GridView ID="GridView1" runat="server"></asp:GridView>
+            </div>
     </form>
 </body>
 </html>

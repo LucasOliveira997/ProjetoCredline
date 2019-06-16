@@ -22,7 +22,7 @@ namespace CredlineFinanceira.App_Code.Persistencia
            
                 System.Data.IDbConnection objConexao;
                 System.Data.IDbCommand objCommand;
-                string sql = "INSERT INTO usu_usuario (usu_codigo, usu_nome, usu_telefone, usu_celular, usu_endereco, usu_dataContrato, usu_cpf, usu_login, usu_senha, usu_cargo, loj_codigo) VALUES(?Codigo, ?Nome, ?Telefone, ?Celular, ?Endereco, ?DataContrato, ?Cpf, ?Login, ?Senha, ?Cargo, ?CodigoLOJ)";
+                string sql = "INSERT INTO usu_usuario (usu_codigo, usu_nome, usu_telefone, usu_celular, usu_endereco, usu_dataContrato, usu_cpf, usu_login, usu_senha, usu_cargo) VALUES(?Codigo, ?Nome, ?Telefone, ?Celular, ?Endereco, ?DataContrato, ?Cpf, ?Login, ?Senha, ?Cargo)";
                 objConexao = Mapped.Connection();
                 objCommand = Mapped.Command(sql, objConexao);
                 objCommand.Parameters.Add(Mapped.Parameter("?Codigo", usuario.Codigo));
@@ -35,7 +35,7 @@ namespace CredlineFinanceira.App_Code.Persistencia
                 objCommand.Parameters.Add(Mapped.Parameter("?Login", usuario.Login));
                 objCommand.Parameters.Add(Mapped.Parameter("?Senha", usuario.Senha));
                 objCommand.Parameters.Add(Mapped.Parameter("?Cargo", usuario.Cargo));
-                objCommand.Parameters.Add(Mapped.Parameter("?CodigoLOJ", usuario.CodigoLOJ));
+           
                 objCommand.ExecuteNonQuery();
                 objConexao.Close();
                 objCommand.Dispose();
@@ -84,7 +84,6 @@ namespace CredlineFinanceira.App_Code.Persistencia
                 obj.Login = Convert.ToString(objDataReader["usu_login"]);
                 obj.Senha = Convert.ToString(objDataReader["usu_senha"]);
                 obj.Cargo = Convert.ToBoolean(objDataReader["usu_cargo"]);
-                obj.CodigoLOJ = Convert.ToInt32(objDataReader["loj_codigo"]);
 
             }
             objDataReader.Close();
@@ -101,7 +100,7 @@ namespace CredlineFinanceira.App_Code.Persistencia
         {
             System.Data.IDbConnection objConexao;
             System.Data.IDbCommand objCommand;
-            string sql = "UPDATE usu_usuario SET usu_nome=?nome, usu_telefone=?Telefone, usu_celular=?Celular, usu_endereco=?Endereco, usu_dataContrato=?DataContrato, usu_cpf=?Cpf, usu_login=?Login, usu_senha=?Senha, usu_cargo=?Cargo, loj_codigo=?CodigoLOJ WHERE usu_codigo=?codigo";
+            string sql = "UPDATE usu_usuario SET usu_nome=?nome, usu_telefone=?Telefone, usu_celular=?Celular, usu_endereco=?Endereco, usu_dataContrato=?DataContrato, usu_cpf=?Cpf, usu_login=?Login, usu_senha=?Senha, usu_cargo=?Cargo WHERE usu_codigo=?codigo";
             objConexao = Mapped.Connection();
             objCommand = Mapped.Command(sql, objConexao);
             objCommand.Parameters.Add(Mapped.Parameter("?Codigo", usuario.Codigo));
@@ -114,7 +113,6 @@ namespace CredlineFinanceira.App_Code.Persistencia
             objCommand.Parameters.Add(Mapped.Parameter("?Login", usuario.Login));
             objCommand.Parameters.Add(Mapped.Parameter("?Senha", usuario.Senha));
             objCommand.Parameters.Add(Mapped.Parameter("?Cargo", usuario.Cargo));
-            objCommand.Parameters.Add(Mapped.Parameter("?CodigoLOJ", usuario.CodigoLOJ));
             objCommand.ExecuteNonQuery();
             objConexao.Close();
             objCommand.Dispose();
@@ -193,6 +191,23 @@ namespace CredlineFinanceira.App_Code.Persistencia
             objConexao.Dispose();
             objDataReader.Dispose();
             return obj;
+        }
+        //vincular 
+
+        public bool Vincular(int idusuario, int idloja)
+        {
+            System.Data.IDbConnection objConexao;
+            System.Data.IDbCommand objCommand;
+            string sql = "INSERT INTO ulo_usuarioloja(usu_codigo, loj_codigo) VALUES (?usuario, ?loja)";
+            objConexao = Mapped.Connection();
+            objCommand = Mapped.Command(sql, objConexao);
+            objCommand.Parameters.Add(Mapped.Parameter("?usuario", idusuario));
+            objCommand.Parameters.Add(Mapped.Parameter("?loja", idloja));
+            objCommand.ExecuteNonQuery();
+            objConexao.Close();
+            objCommand.Dispose();
+            objConexao.Dispose();
+            return true;
         }
 
 

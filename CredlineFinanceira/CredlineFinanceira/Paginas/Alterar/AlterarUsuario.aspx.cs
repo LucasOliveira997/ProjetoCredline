@@ -26,7 +26,6 @@ namespace CredlineFinanceira.Paginas.Alterar
                 txtLogin.Text = usuario.Login;
                 txtSenha.Text = usuario.Senha.ToString();
                 dpdCargo.Text = usuario.Cargo.ToString();
-                dpdLoja.Text = usuario.CodigoLOJ.ToString();
             }
         }
 
@@ -43,7 +42,6 @@ namespace CredlineFinanceira.Paginas.Alterar
             usuario.Login = txtLogin.Text;
             usuario.Senha = txtSenha.Text;
             usuario.Cargo = Convert.ToBoolean(dpdCargo.Text);
-            usuario.CodigoLOJ = Convert.ToInt32(dpdLoja.Text);
 
             if (bd.Update(usuario))
             {

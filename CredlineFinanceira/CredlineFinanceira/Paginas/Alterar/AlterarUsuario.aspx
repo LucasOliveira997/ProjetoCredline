@@ -59,7 +59,7 @@
 
             <br /> <br />
             <asp:DropDownList ID="dpdLoja" runat="server">
-                <asp:ListItem Value="1">Pinda</asp:ListItem>
+                
             </asp:DropDownList>
             <br />                      
             <asp:Button ID="btnSalvar" runat="server" Text="Cadastrar" OnClick="btnSalvar_Click" />

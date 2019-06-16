@@ -6,6 +6,7 @@ using System.Web.UI;
 using System.Web.UI.WebControls;
 using CredlineFinanceira.App_Code.Classes;
 using CredlineFinanceira.App_Code.Persistencia;
+using System.Data;
 
 namespace CredlineFinanceira.Paginas.Login.Funcionario
 {
@@ -13,6 +14,8 @@ namespace CredlineFinanceira.Paginas.Login.Funcionario
     {
         protected void Page_Load(object sender, EventArgs e)
         {
+            Carrega();
+
             int Codigo = Convert.ToInt32(Session["ID"]);
             UsuarioBD bd = new UsuarioBD();
             Usuario usuario = bd.Select(Codigo);
@@ -25,8 +28,15 @@ namespace CredlineFinanceira.Paginas.Login.Funcionario
                 lblTitulo.Text = "Bem vindo (Funcionário) : " + usuario.Nome;
             }
         }
+        private void Carrega()
+        {
+            ServicoBD bd = new ServicoBD();
+            DataSet ds = bd.SelectAll();
+            GridView1.DataSource = ds.Tables[0].DefaultView;
+            GridView1.DataBind();
+        }
 
-        
+
 
         private bool IsFuncionario(bool Cargo)
         {

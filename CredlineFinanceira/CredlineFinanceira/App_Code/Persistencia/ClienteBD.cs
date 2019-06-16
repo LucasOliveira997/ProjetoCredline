@@ -48,7 +48,7 @@ namespace CredlineFinanceira.App_Code.Persistencia
             System.Data.IDbCommand objCommand;
             System.Data.IDataAdapter objDataAdapter;
             objConexao = Mapped.Connection();
-            objCommand = Mapped.Command("SELECT * FROM cli_cliente", objConexao);
+            objCommand = Mapped.Command("SELECT cli_nome as nome, cli_telefone as telefone, cli_celular as celular, cli_endereco as endereco, cli_dataNascimento as DataNascimento, cli_cpf as cpf, cli_ocupacao as ocupacao, cli_renda as renda, cli_rg as rg FROM cli_cliente", objConexao);
             objDataAdapter = Mapped.Adapter(objCommand);
             objDataAdapter.Fill(ds);
             objConexao.Close();
