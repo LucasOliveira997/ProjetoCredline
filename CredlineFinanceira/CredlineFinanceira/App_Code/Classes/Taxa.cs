@@ -13,6 +13,9 @@ namespace CredlineFinanceira.App_Code.Classes
         public string StatusTAX { get; set; }
         public string JurosTAX { get; set; }
 
+        public List<Emprestimo> Emprestimos { get; set; }
+
+
         public Taxa()
         {
             //

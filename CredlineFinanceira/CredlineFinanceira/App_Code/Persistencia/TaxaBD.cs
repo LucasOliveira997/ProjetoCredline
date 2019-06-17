@@ -40,7 +40,7 @@ namespace CredlineFinanceira.App_Code.Persistencia
             System.Data.IDbCommand objCommand;
             System.Data.IDataAdapter objDataAdapter;
             objConexao = Mapped.Connection();
-            objCommand = Mapped.Command("SELECT * FROM tax_taxas", objConexao);
+            objCommand = Mapped.Command("SELECT * FROM tax_taxa", objConexao);
             objDataAdapter = Mapped.Adapter(objCommand);
             objDataAdapter.Fill(ds);
             objConexao.Close();

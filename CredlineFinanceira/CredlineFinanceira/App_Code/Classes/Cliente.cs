@@ -17,6 +17,10 @@ namespace CredlineFinanceira.App_Code.Classes
         public string OcupacaoCLI { get; set; }
         public double RendaCLI { get; set; }
         public int RgCLI { get; set; }
+
+        public List<Emprestimo> Emprestimos { get; set; }
+
+
         public Cliente()
         {
             //

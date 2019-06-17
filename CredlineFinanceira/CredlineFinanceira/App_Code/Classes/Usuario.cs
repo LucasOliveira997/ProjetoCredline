@@ -23,6 +23,8 @@ namespace CredlineFinanceira.App_Code.Classes
         public bool Cargo { get; set; }
     
         public List<Loja> Lojas { get; set; }
+        public List<Emprestimo> Emprestimos { get; set; }
+
 
         public Usuario()
         {

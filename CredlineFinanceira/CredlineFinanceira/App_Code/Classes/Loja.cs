@@ -13,6 +13,7 @@ namespace CredlineFinanceira.App_Code.Classes
         public string EnderecoLOJ { get; set; }
 
         public List<Usuario> Usuarios { get; set; }
+        public List<Emprestimo> Emprestimos { get; set; }
 
 
         public Loja()

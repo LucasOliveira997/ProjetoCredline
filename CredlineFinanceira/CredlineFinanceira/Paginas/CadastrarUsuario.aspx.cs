@@ -33,7 +33,8 @@ namespace CredlineFinanceira.Paginas
             if (!Page.IsPostBack)
             {
                 Carrega();
-            }
+            }
+
         }
         protected void btnSalvar_Click(object sender, EventArgs e)
         {

@@ -173,6 +173,7 @@
     <Content Include="Paginas\CadastrarCliente.aspx" />
     <Content Include="Paginas\CadastrarServico.aspx" />
     <Content Include="Paginas\Listar\ListarUsuario.aspx" />
+    <Content Include="Paginas\Listar\ListarVenda.aspx" />
     <Content Include="Paginas\Login\fonts\Asap-Regular.ttf" />
     <Content Include="Paginas\Login\fonts\Audiowide-Regular.ttf" />
     <Content Include="bin\roslyn\csc.exe.config" />
@@ -363,6 +364,13 @@
     </Compile>
     <Compile Include="Paginas\Listar\ListarUsuario.aspx.designer.cs">
       <DependentUpon>ListarUsuario.aspx</DependentUpon>
+    </Compile>
+    <Compile Include="Paginas\Listar\ListarVenda.aspx.cs">
+      <DependentUpon>ListarVenda.aspx</DependentUpon>
+      <SubType>ASPXCodeBehind</SubType>
+    </Compile>
+    <Compile Include="Paginas\Listar\ListarVenda.aspx.designer.cs">
+      <DependentUpon>ListarVenda.aspx</DependentUpon>
     </Compile>
     <Compile Include="Paginas\Login\Admin\Index.aspx.cs">
       <DependentUpon>Index.aspx</DependentUpon>
