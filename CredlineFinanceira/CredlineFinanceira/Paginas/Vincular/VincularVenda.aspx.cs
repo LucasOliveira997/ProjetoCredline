@@ -6,12 +6,11 @@ using System.Web.UI;
 using System.Web.UI.WebControls;
 using CredlineFinanceira.App_Code.Classes;
 using CredlineFinanceira.App_Code.Persistencia;
-using CredlineFinanceira.Paginas;
 using System.Data;
 
-namespace CredlineFinanceira.Paginas
+namespace CredlineFinanceira.Paginas.Vincular
 {
-    public partial class CadastroVenda : System.Web.UI.Page
+    public partial class VincularVenda : System.Web.UI.Page
     {
 
         private void Carrega()
@@ -35,7 +34,7 @@ namespace CredlineFinanceira.Paginas
             cblTaxa.DataValueField = "tax_codigo";
             cblTaxa.DataBind();
 
-            
+
             //Carrega Usuario
             UsuarioBD usuariobd = new UsuarioBD();
             DataSet usuariods = usuariobd.SelectAll();
@@ -56,8 +55,15 @@ namespace CredlineFinanceira.Paginas
             dpdLoja.DataBind();
             dpdLoja.Items.Insert(0, "Selecione");
 
-
-
+            //Carrega Venda
+            EmprestimoBD emprestimobd = new EmprestimoBD();
+            DataSet emprestimods = emprestimobd.SelectAll();
+            //vincula emprestimo ao dropdownlist
+            dpdEmprestimo.DataSource = emprestimods.Tables[0].DefaultView;
+            dpdEmprestimo.DataTextField = "emp_id";
+            dpdEmprestimo.DataValueField = "emp_codigo";
+            dpdEmprestimo.DataBind();
+            dpdEmprestimo.Items.Insert(0, "Selecione");
         }
 
 
@@ -65,40 +71,24 @@ namespace CredlineFinanceira.Paginas
         {
             Carrega();
         }
+
         protected void btnSalvar_Click(object sender, EventArgs e)
         {
-            Emprestimo emprestimo = new Emprestimo();
-
-            emprestimo.DataEMP = Convert.ToDateTime(txtData.Text);
-            emprestimo.TipoEMP = txtTipo.Text;
-            emprestimo.ValorEMP = Convert.ToDouble(txtValor.Text);
-            emprestimo.QntdParcela = Convert.ToInt32(txtqntdParcela.Text);
-            emprestimo.ValorParcela = Convert.ToDouble(txtValorParcela.Text);
-            emprestimo.Status = txtStatus.Text;
-            emprestimo.Id = txtId.Text;
-
-
-
             EmprestimoBD bd = new EmprestimoBD();
-            if (bd.Insert(emprestimo))
+            for (int i = 0; i < dpdEmprestimo.Items.Count; i++)
             {
-                lblMensagem.Text = "Emprestimo cadastrado com sucesso";
+                if (dpdEmprestimo.SelectedItem.Selected)
+                {
+                    int idusuario = Convert.ToInt32(dpdUsuario.SelectedItem.Value);
+                    int idloja = Convert.ToInt32(dpdLoja.SelectedItem.Value);
+                    int idcliente = Convert.ToInt32(dpdCliente.SelectedItem.Value);
+                    int idtaxa = Convert.ToInt32(cblTaxa.Items[i].Value);
+                    int idemprestimo = Convert.ToInt32(dpdEmprestimo.SelectedItem.Value);
 
-                txtData.Text = "";
-                txtValor.Text = "";
-                txtTipo.Text = "";
-                txtqntdParcela.Text = "";
-                txtValorParcela.Text = "";
-                txtStatus.Text = "";
-                txtId.Text = "";
-                txtTipo.Focus();
-
+                    bd.Vincular(idloja, idusuario, idtaxa, idcliente, idemprestimo);
+                }
             }
-            else
-            {
-                lblMensagem.Text = "Ops, algo deu errado, tente novamente.";
-            }
+            lblMensagem.Text = "Usuario vinculado com sucesso";
         }
-
     }
 }

@@ -53,6 +53,10 @@
             <br />
             <asp:DropDownList ID="dpdLoja" runat="server"></asp:DropDownList>
             <br />
+            <asp:Label ID="lblId" runat="server" Text="Identificador:"></asp:Label>
+            <br />
+            <asp:TextBox ID="txtId" runat="server"></asp:TextBox>
+            <br />
             <asp:Button ID="btnSalvar" runat="server" Text="Salvar" OnClick="btnSalvar_Click" />
             <br />
             <asp:Label ID="lblMensagem" runat="server" Text=""></asp:Label>

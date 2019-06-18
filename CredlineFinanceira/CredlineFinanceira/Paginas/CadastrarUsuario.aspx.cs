@@ -82,7 +82,7 @@ namespace CredlineFinanceira.Paginas
             if (codigo > 0)
             {
                 Session["ID"] = codigo;
-                Response.Redirect("VincularUsuLoj.aspx");
+                Response.Redirect("Vincular/VincularUsuLoj.aspx");
             }
             else
             {

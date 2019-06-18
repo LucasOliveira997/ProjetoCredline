@@ -211,6 +211,24 @@ namespace CredlineFinanceira.Paginas {
         protected global::System.Web.UI.WebControls.DropDownList dpdLoja;
         
         /// <summary>
+        /// Controle lblId.
+        /// </summary>
+        /// <remarks>
+        /// Campo gerado automaticamente.
+        /// Modificar a declaração do campo de movimento do arquivo de designer para o arquivo code-behind.
+        /// </remarks>
+        protected global::System.Web.UI.WebControls.Label lblId;
+        
+        /// <summary>
+        /// Controle txtId.
+        /// </summary>
+        /// <remarks>
+        /// Campo gerado automaticamente.
+        /// Modificar a declaração do campo de movimento do arquivo de designer para o arquivo code-behind.
+        /// </remarks>
+        protected global::System.Web.UI.WebControls.TextBox txtId;
+        
+        /// <summary>
         /// Controle btnSalvar.
         /// </summary>
         /// <remarks>

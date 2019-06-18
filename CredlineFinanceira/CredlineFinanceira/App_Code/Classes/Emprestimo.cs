@@ -14,6 +14,7 @@ namespace CredlineFinanceira.App_Code.Classes
         public int QntdParcela { get; set; }
         public double ValorParcela { get; set; }
         public string Status { get; set; }
+        public string Id { get; set; }
 
         public List<Cliente> Clientes { get; set; }
         public List<Loja> Lojas { get; set; }
