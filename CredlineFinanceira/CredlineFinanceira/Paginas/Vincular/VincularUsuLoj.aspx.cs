@@ -33,13 +33,15 @@ namespace CredlineFinanceira.Paginas.Vincular
             cblLogin.DataTextField = "usu_login";
             cblLogin.DataValueField = "usu_codigo";
             cblLogin.DataBind();
-        }
+        }
+
         protected void Page_Load(object sender, EventArgs e)
         {
             if (!Page.IsPostBack)
             {
                 Carrega();
-            }
+            }
+
         }
         private bool hasLoja()
         {
@@ -55,7 +57,8 @@ namespace CredlineFinanceira.Paginas.Vincular
                 }
             }
             return false;
-        }        protected void btnSalvar_Click(object sender, EventArgs e)
+        }
+        protected void btnSalvar_Click(object sender, EventArgs e)
         {
             if (!hasLoja())
             {

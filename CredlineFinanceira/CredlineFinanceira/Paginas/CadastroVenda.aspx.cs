@@ -24,7 +24,7 @@ namespace CredlineFinanceira.Paginas
             dpdCliente.DataTextField = "cli_cpf";
             dpdCliente.DataValueField = "cli_codigo";
             dpdCliente.DataBind();
-            dpdCliente.Items.Insert(0, "Selecione");
+            dpdCliente.Items.Insert(0, new ListItem("Selecione", "0"));
 
             //Carrega Taxa
             TaxaBD taxabd = new TaxaBD();

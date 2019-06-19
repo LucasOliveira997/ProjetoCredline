@@ -23,7 +23,7 @@ namespace CredlineFinanceira.Paginas.Vincular
             dpdCliente.DataTextField = "cli_cpf";
             dpdCliente.DataValueField = "cli_codigo";
             dpdCliente.DataBind();
-            dpdCliente.Items.Insert(0, "Selecione");
+            dpdCliente.Items.Insert(0, new ListItem("Selecione", ""));
 
             //Carrega Taxa
             TaxaBD taxabd = new TaxaBD();
@@ -43,7 +43,7 @@ namespace CredlineFinanceira.Paginas.Vincular
             dpdUsuario.DataTextField = "usu_nome";
             dpdUsuario.DataValueField = "usu_codigo";
             dpdUsuario.DataBind();
-            dpdUsuario.Items.Insert(0, "Selecione");
+            dpdUsuario.Items.Insert(0, new ListItem("Selecione", ""));
 
             //Carrega Loja
             LojaBD lojabd = new LojaBD();
@@ -53,7 +53,7 @@ namespace CredlineFinanceira.Paginas.Vincular
             dpdLoja.DataTextField = "loj_id";
             dpdLoja.DataValueField = "loj_codigo";
             dpdLoja.DataBind();
-            dpdLoja.Items.Insert(0, "Selecione");
+            dpdLoja.Items.Insert(0, new ListItem("Selecione", ""));
 
             //Carrega Venda
             EmprestimoBD emprestimobd = new EmprestimoBD();
@@ -63,32 +63,74 @@ namespace CredlineFinanceira.Paginas.Vincular
             dpdEmprestimo.DataTextField = "emp_id";
             dpdEmprestimo.DataValueField = "emp_codigo";
             dpdEmprestimo.DataBind();
-            dpdEmprestimo.Items.Insert(0, "Selecione");
+            dpdEmprestimo.Items.Insert(0, new ListItem("Selecione", ""));
         }
 
 
         protected void Page_Load(object sender, EventArgs e)
         {
-            Carrega();
+            if (!Page.IsPostBack)
+            {
+                Carrega();
+            }
         }
 
         protected void btnSalvar_Click(object sender, EventArgs e)
         {
-            EmprestimoBD bd = new EmprestimoBD();
-            for (int i = 0; i < dpdEmprestimo.Items.Count; i++)
-            {
-                if (dpdEmprestimo.SelectedItem.Selected)
-                {
-                    int idusuario = Convert.ToInt32(dpdUsuario.SelectedItem.Value);
-                    int idloja = Convert.ToInt32(dpdLoja.SelectedItem.Value);
-                    int idcliente = Convert.ToInt32(dpdCliente.SelectedItem.Value);
-                    int idtaxa = Convert.ToInt32(cblTaxa.Items[i].Value);
-                    int idemprestimo = Convert.ToInt32(dpdEmprestimo.SelectedItem.Value);
+            string ul = "<ul>";
+            int cliente = 0;
+            int loja = 0;
+            int usuario = 0;
+            int emprestimo = 0;
 
-                    bd.Vincular(idloja, idusuario, idtaxa, idcliente, idemprestimo);
-                }
+            if (String.IsNullOrEmpty(dpdCliente.SelectedValue))
+            {
+                ul += "<li>Escolha o cliente</li>";
+            }else
+                cliente = Convert.ToInt32(dpdCliente.SelectedItem.Value);
+
+            if (String.IsNullOrEmpty(dpdLoja.SelectedValue))
+            {
+                ul += "<li>Escolha a loja</li>";
             }
-            lblMensagem.Text = "Usuario vinculado com sucesso";
+            else
+                loja = Convert.ToInt32(dpdLoja.SelectedItem.Value);
+
+            if (String.IsNullOrEmpty(dpdUsuario.SelectedValue))
+            {
+                ul += "<li>Escolha o usuário</li>";
+            }
+            else
+                usuario = Convert.ToInt32(dpdUsuario.SelectedItem.Value);
+
+            if (String.IsNullOrEmpty(dpdEmprestimo.SelectedValue))
+            {
+                ul += "<li>Escolha o empréstimo</li>";
+            }
+            else
+                emprestimo = Convert.ToInt32(dpdEmprestimo.SelectedItem.Value);
+
+            
+
+
+            ul += "</ul>";
+
+            if (ul == "<ul></ul>")
+            {
+                EmprestimoBD bd = new EmprestimoBD();
+                for (int i = 0; i < cblTaxa.Items.Count; i++)
+                {
+                    if (cblTaxa.Items[i].Selected)
+                    {
+                        bd.Vincular(Convert.ToInt32(cblTaxa.Items[i].Value), cliente, loja, usuario, emprestimo);
+                    }
+                }
+                lblMensagem.Text = "Venda vinculada com sucesso";
+            }
+            else
+            {
+                lblMensagem.Text = ul;
+            }
         }
     }
 }

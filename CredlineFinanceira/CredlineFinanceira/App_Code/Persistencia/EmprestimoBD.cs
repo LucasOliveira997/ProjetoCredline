@@ -42,7 +42,7 @@ namespace CredlineFinanceira.App_Code.Persistencia
             System.Data.IDbCommand objCommand;
             System.Data.IDataAdapter objDataAdapter;
             objConexao = Mapped.Connection();
-            objCommand = Mapped.Command("select e.emp_codigo, emp_data, emp_tipo , emp_valor, emp_qntdParcela, emp_valorParcela, emp_status, emp_id, tax_taxaJuros, cli_cpf, usu_nome, loj_id from emp_emprestimo e inner join ven_venda v on e.emp_codigo = v.emp_codigo inner join usu_usuario u on u.usu_codigo = v.usu_codigo inner join tax_taxa t on t.tax_codigo = v.tax_codigo inner join cli_cliente c on c.cli_codigo = v.cli_codigo inner join loj_loja l on l.loj_codigo = v.loj_codigo;", objConexao);
+            objCommand = Mapped.Command("select * from emp_emprestimo", objConexao);
             objDataAdapter = Mapped.Adapter(objCommand);
             objDataAdapter.Fill(ds);
             objConexao.Close();
@@ -55,7 +55,7 @@ namespace CredlineFinanceira.App_Code.Persistencia
         //delete
 
         //vincular
-        public bool Vincular(int idusuario, int idloja, int idtaxa, int idcliente, int idemprestimo)
+        public bool Vincular(int idtaxa, int idcliente, int idloja, int idusuario, int idemprestimo)
         {
             System.Data.IDbConnection objConexao;
             System.Data.IDbCommand objCommand;
