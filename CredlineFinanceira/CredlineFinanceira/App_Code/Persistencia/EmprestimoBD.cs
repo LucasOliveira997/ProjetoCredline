@@ -54,6 +54,39 @@ namespace CredlineFinanceira.App_Code.Persistencia
         //update
         //delete
 
+        // select média
+        public DataSet SelectMedia()
+        {
+            DataSet ds = new DataSet();
+            System.Data.IDbConnection objConexao;
+            System.Data.IDbCommand objCommand;
+            System.Data.IDataAdapter objDataAdapter;
+            objConexao = Mapped.Connection();
+            objCommand = Mapped.Command("select avg(emp_valor) as 'media', emp_tipo as tipo from emp_emprestimo group by emp_tipo;", objConexao);
+            objDataAdapter = Mapped.Adapter(objCommand);
+            objDataAdapter.Fill(ds);
+            objConexao.Close();
+            objCommand.Dispose();
+            objConexao.Dispose();
+            return ds;
+        }
+        // select total
+        public DataSet SelectTotal()
+        {
+            DataSet ds = new DataSet();
+            System.Data.IDbConnection objConexao;
+            System.Data.IDbCommand objCommand;
+            System.Data.IDataAdapter objDataAdapter;
+            objConexao = Mapped.Connection();
+            objCommand = Mapped.Command("select sum(`emp_valor`) as total, month(emp_data) as mes, year(emp_data) as ano from emp_emprestimo group by year(emp_data), month(emp_data);", objConexao);
+            objDataAdapter = Mapped.Adapter(objCommand);
+            objDataAdapter.Fill(ds);
+            objConexao.Close();
+            objCommand.Dispose();
+            objConexao.Dispose();
+            return ds;
+        }
+
         //vincular
         public bool Vincular(int idtaxa, int idcliente, int idloja, int idusuario, int idemprestimo)
         {

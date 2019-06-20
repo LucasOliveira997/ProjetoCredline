@@ -16,6 +16,8 @@ namespace CredlineFinanceira.Paginas.Listar
         protected void Page_Load(object sender, EventArgs e)
         {
             Carrega();
+            Carrega2();
+            Carrega3();
         }
         private void Carrega()
         {
@@ -23,6 +25,22 @@ namespace CredlineFinanceira.Paginas.Listar
             DataSet ds = bd.SelectAll();
             GridView1.DataSource = ds.Tables[0].DefaultView;
             GridView1.DataBind();
+
+
+        }
+        private void Carrega2()
+        {
+            EmprestimoBD bd = new EmprestimoBD();
+            DataSet ds = bd.SelectMedia();
+            GridView2.DataSource = ds.Tables[0].DefaultView;
+            GridView2.DataBind();
+        }
+        private void Carrega3()
+        {
+            EmprestimoBD bd = new EmprestimoBD();
+            DataSet ds = bd.SelectTotal();
+            GridView3.DataSource = ds.Tables[0].DefaultView;
+            GridView3.DataBind();
         }
     }
 }
