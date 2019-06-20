@@ -11,16 +11,21 @@ namespace CredlineFinanceira.Paginas.Listar
 {
     public partial class ListarCliente : System.Web.UI.Page
     {
-        private void Carrega()
+        private void Carrega(string termo)
         {
             ClienteBD bd = new ClienteBD();
-            DataSet ds = bd.SelectAll();
+
+            DataSet ds;
+            if (termo != "")
+                ds = bd.Search(termo);
+            else
+                ds = bd.SelectAll();
             GridView1.DataSource = ds.Tables[0].DefaultView;
             GridView1.DataBind();
         }
         protected void Page_Load(object sender, EventArgs e)
         {
-            Carrega();
+            Carrega("");
         }
 
         protected void GridView1_RowCommand(object sender, GridViewCommandEventArgs e)
@@ -38,12 +43,26 @@ namespace CredlineFinanceira.Paginas.Listar
                     Codigo = Convert.ToInt32(e.CommandArgument);
                     ClienteBD bd = new ClienteBD();
                     bd.Delete(Codigo);
-                    Carrega();
+                    Carrega("");
                     break;
                 default:
                     break;
             }
 
+        }
+      
+        protected void btnPesquisar_Click(object sender, EventArgs e)
+        {
+            string termo = txtPesquisa.Text.Trim();
+            if (termo != string.Empty)
+            {
+                Carrega(termo);
+            }
+            else
+            {
+                Carrega("");
+                txtPesquisa.Focus();
+            }
         }
     }
 }

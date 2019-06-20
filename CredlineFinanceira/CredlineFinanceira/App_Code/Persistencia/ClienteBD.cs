@@ -135,6 +135,24 @@ namespace CredlineFinanceira.App_Code.Persistencia
             objConexao.Dispose();
             return true;
         }
+        //Search
+        public DataSet Search(string termo)
+        {
+            DataSet ds = new DataSet();
+            System.Data.IDbConnection objConexao;
+            System.Data.IDbCommand objCommand;
+            System.Data.IDataAdapter objDataAdapter;
+            objConexao = Mapped.Connection();
+            objCommand = Mapped.Command("SELECT * FROM cli_cliente WHERE cli_nome LIKE ?NomeCli ORDER BY cli_nome", objConexao);
+           
+            objCommand.Parameters.Add(Mapped.Parameter("?NomeCli", '%' + termo + '%'));
+            objDataAdapter = Mapped.Adapter(objCommand);
+            objDataAdapter.Fill(ds);
+            objConexao.Close();
+            objCommand.Dispose();
+            objConexao.Dispose();
+            return ds;
+        }
 
 
         //construtor

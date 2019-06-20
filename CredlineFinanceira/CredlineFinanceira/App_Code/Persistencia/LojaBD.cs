@@ -49,16 +49,20 @@ namespace CredlineFinanceira.App_Code.Persistencia
             return ds;
         }
         //select 
-        public Loja Select(int id)
+        public Loja Select(int CodigoLOJ)
         {
             Loja obj = null;
-            System.Data.IDbConnection objConexao; System.Data.IDbCommand objCommand; System.Data.IDataReader objDataReader;
-            objConexao = Mapped.Connection(); objCommand = Mapped.Command("SELECT * FROM loj_loja WHERE loj_id = ?IdLOJ", objConexao);
-            objCommand.Parameters.Add(Mapped.Parameter("?IdLOJ", id));
+            System.Data.IDbConnection objConexao;
+            System.Data.IDbCommand objCommand;
+            System.Data.IDataReader objDataReader;
+            objConexao = Mapped.Connection();
+            objCommand = Mapped.Command("SELECT * FROM loj_loja WHERE loj_codigo = ?CodigoLOJ", objConexao);
+            objCommand.Parameters.Add(Mapped.Parameter("?CodigoLOJ", CodigoLOJ));
             objDataReader = objCommand.ExecuteReader();
             while (objDataReader.Read())
             {
                 obj = new Loja();
+                obj.CodigoLOJ = Convert.ToInt32(objDataReader["loj_codigo"]);
                 obj.CnpjLOJ = Convert.ToString(objDataReader["loj_cnpj"]);
                 obj.IdLOJ = Convert.ToString(objDataReader["loj_id"]);
                 obj.EnderecoLOJ = Convert.ToString(objDataReader["loj_endereco"]);
@@ -74,9 +78,10 @@ namespace CredlineFinanceira.App_Code.Persistencia
         public bool Update(Loja loja)
         {
             System.Data.IDbConnection objConexao; System.Data.IDbCommand objCommand;
-            string sql = "UPDATE loj_loja SET loj_cnpj=?CnpjLOJ, loj_id=?IdLOJ, loj_endereco=?EnderecoLOJ WHERE loj_id=?IdLOJ";
+            string sql = "UPDATE loj_loja SET loj_codigo=?CodigoLOJ, loj_cnpj=?CnpjLOJ, loj_id=?IdLOJ, loj_endereco=?EnderecoLOJ WHERE loj_codigo=?CodigoLOJ";
             objConexao = Mapped.Connection(); objCommand = Mapped.Command(sql, objConexao);
             objCommand = Mapped.Command(sql, objConexao);
+            objCommand.Parameters.Add(Mapped.Parameter("?CodigoLOJ", loja.CodigoLOJ));
             objCommand.Parameters.Add(Mapped.Parameter("?CnpjLOJ", loja.CnpjLOJ));
             objCommand.Parameters.Add(Mapped.Parameter("?IdLOJ", loja.IdLOJ));
             objCommand.Parameters.Add(Mapped.Parameter("?EnderecoLOJ", loja.EnderecoLOJ));
@@ -90,10 +95,10 @@ namespace CredlineFinanceira.App_Code.Persistencia
         public bool Delete(int Loja)
         {
             System.Data.IDbConnection objConexao; System.Data.IDbCommand objCommand;
-            string sql = "DELETE FROM loj_loj WHERE loj_id=?IdLOJ";
+            string sql = "DELETE FROM loj_loja WHERE loj_codigo=?CodigoLOJ";
             objConexao = Mapped.Connection();
             objCommand = Mapped.Command(sql, objConexao);
-            objCommand.Parameters.Add(Mapped.Parameter("?IdLOJ", Loja));
+            objCommand.Parameters.Add(Mapped.Parameter("?CodigoLOJ", Loja));
             objCommand.ExecuteNonQuery();
             objConexao.Close();
             objCommand.Dispose();

@@ -170,6 +170,7 @@
     <Content Include="obj\Debug\CredlineFinanceira.pdb" />
     <Content Include="obj\Debug\DesignTimeResolveAssemblyReferencesInput.cache" />
     <Content Include="Paginas\Alterar\AlterarUsuario.aspx" />
+    <Content Include="Paginas\Alterar\AlterarVenda.aspx" />
     <Content Include="Paginas\CadastrarCliente.aspx" />
     <Content Include="Paginas\CadastrarServico.aspx" />
     <Content Include="Paginas\Listar\ListarUsuario.aspx" />
@@ -302,6 +303,13 @@
     </Compile>
     <Compile Include="Paginas\Alterar\AlterarUsuario.aspx.designer.cs">
       <DependentUpon>AlterarUsuario.aspx</DependentUpon>
+    </Compile>
+    <Compile Include="Paginas\Alterar\AlterarVenda.aspx.cs">
+      <DependentUpon>AlterarVenda.aspx</DependentUpon>
+      <SubType>ASPXCodeBehind</SubType>
+    </Compile>
+    <Compile Include="Paginas\Alterar\AlterarVenda.aspx.designer.cs">
+      <DependentUpon>AlterarVenda.aspx</DependentUpon>
     </Compile>
     <Compile Include="Paginas\CadastarLoja.aspx.cs">
       <DependentUpon>CadastarLoja.aspx</DependentUpon>

@@ -51,8 +51,21 @@ namespace CredlineFinanceira.App_Code.Persistencia
             return ds;
         }
         //select
-        //update
-        //delete
+        
+        //delete 
+        public bool Delete(int Emprestimo)
+        {
+            System.Data.IDbConnection objConexao; System.Data.IDbCommand objCommand;
+            string sql = "DELETE FROM emp_emprestimo WHERE emp_codigo=?CodigoEMP";
+            objConexao = Mapped.Connection();
+            objCommand = Mapped.Command(sql, objConexao);
+            objCommand.Parameters.Add(Mapped.Parameter("?CodigoEMP", Emprestimo));
+            objCommand.ExecuteNonQuery();
+            objConexao.Close();
+            objCommand.Dispose();
+            objConexao.Dispose();
+            return true;
+        }
 
         // select média
         public DataSet SelectMedia()

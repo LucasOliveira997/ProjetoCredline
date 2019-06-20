@@ -42,5 +42,27 @@ namespace CredlineFinanceira.Paginas.Listar
             GridView3.DataSource = ds.Tables[0].DefaultView;
             GridView3.DataBind();
         }
+        protected void GridView1_RowCommand(object sender, GridViewCommandEventArgs e)
+        {
+            int codigo = 0;
+            switch (e.CommandName)
+            {
+                case "Alterar":
+                    codigo = Convert.ToInt32(e.CommandArgument);
+                    Session["ID"] = codigo;
+                    Response.Redirect("../Alterar/AlterarVenda.aspx");
+                    break;
+                case "Deletar":
+                    codigo = Convert.ToInt32(e.CommandArgument);
+                    EmprestimoBD bd = new EmprestimoBD();
+                    bd.Delete(codigo);
+                    Carrega();
+                    break;
+                default:
+                    break;
+            }
+
+        }
     }
+    
 }

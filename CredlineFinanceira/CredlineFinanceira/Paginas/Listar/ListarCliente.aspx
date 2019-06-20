@@ -34,8 +34,33 @@
                         <br />
                         <a href="../Login/Funcionario/Index.aspx">Home</a>
                     </div>
-                    <div class="col-xl-12">
-                        <asp:GridView ID="GridView1" runat="server"></asp:GridView>
+                <div>
+                    <br />
+                    <asp:Label ID="lblDigite" runat="server" Text="Pesquisar Cliente:"></asp:Label>
+                    <br />
+                    <asp:TextBox ID="txtPesquisa" runat="server"></asp:TextBox>
+                    <asp:Button ID="btnPesquisar" runat="server" Text="Pesquisar" OnClick="btnPesquisar_Click" />
+                    <br />
+                    <asp:Label ID="lblMensagem" runat="server" Text=""></asp:Label>
+                    <br />
+                </div>
+                    <div>
+                        <asp:GridView ID="GridView1" runat="server" OnRowCommand="GridView1_RowCommand">
+                <Columns>
+                    <asp:TemplateField>
+                        <ItemTemplate>
+                            <asp:LinkButton ID="lbAlterar" runat="server" CommandName="Alterar"
+                                CommandArgument='<%# Bind("cli_codigo")%>'>Alterar</asp:LinkButton>
+                        </ItemTemplate>
+                    </asp:TemplateField>
+                    <asp:TemplateField>
+                        <ItemTemplate>
+                            <asp:LinkButton ID="lbDeletar" runat="server" CommandName="Deletar"
+                                CommandArgument='<%# Bind("cli_codigo")%>'>Excluir</asp:LinkButton>
+                        </ItemTemplate>
+                    </asp:TemplateField>
+                </Columns>
+                </asp:GridView>
                         <br />
                     </div>
                    

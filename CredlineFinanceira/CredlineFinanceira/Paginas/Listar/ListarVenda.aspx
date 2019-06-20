@@ -12,7 +12,22 @@
         <div>
             <asp:Label ID="lblTitulo" runat="server" Text="Lista de vendas"></asp:Label>
             <br />
-            <asp:GridView ID="GridView1" runat="server"></asp:GridView>
+            <asp:GridView ID="GridView1" runat="server" OnRowCommand="GridView1_RowCommand">
+                <Columns>
+                    <asp:TemplateField>
+                        <ItemTemplate>
+                            <asp:LinkButton ID="lbAlterar" runat="server" CommandName="Alterar"
+                                CommandArgument='<%# Bind("emp_codigo")%>'>Alterar</asp:LinkButton>
+                        </ItemTemplate>
+                    </asp:TemplateField>
+                    <asp:TemplateField>
+                        <ItemTemplate>
+                            <asp:LinkButton ID="lbDeletar" runat="server" CommandName="Deletar"
+                                CommandArgument='<%# Bind("emp_codigo")%>'>Excluir</asp:LinkButton>
+                        </ItemTemplate>
+                    </asp:TemplateField>
+                </Columns>
+            </asp:GridView>
             <br />
             <asp:Label ID="lblTitulo2" runat="server" Text="Valor médio por tipo"></asp:Label>
             <br />
