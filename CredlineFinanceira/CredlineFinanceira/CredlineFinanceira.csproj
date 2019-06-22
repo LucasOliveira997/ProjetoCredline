@@ -204,6 +204,7 @@
     <Content Include="Paginas\Login\Funcionario\Index.aspx" />
     <Content Include="Paginas\Login\images\fundinho.jpg" />
     <Content Include="Paginas\Login\Login.aspx" />
+    <Content Include="Paginas\StyleSheet1.css" />
     <Content Include="Paginas\Vincular\VincularUsuLoj.aspx" />
     <Content Include="Paginas\Vincular\VincularVenda.aspx" />
     <Content Include="Scripts\bootstrap.js" />

@@ -15,18 +15,31 @@ namespace CredlineFinanceira.Paginas.Listar
     {
         protected void Page_Load(object sender, EventArgs e)
         {
-            Carrega();
-            Carrega2();
-            Carrega3();
+            if (!Page.IsPostBack)
+            {
+                CarregaGrid("");
+                Carrega2();
+                Carrega3();
+            }
         }
-        private void Carrega()
+        private void CarregaGrid(string termo)
         {
             EmprestimoBD bd = new EmprestimoBD();
-            DataSet ds = bd.SelectAll();
+
+            DataSet ds;
+            if (termo != "")
+                ds = bd.Search(termo);
+            else
+                ds = bd.SelectVenda();
+
             GridView1.DataSource = ds.Tables[0].DefaultView;
             GridView1.DataBind();
 
-
+            int registros = ds.Tables[0].Rows.Count;
+            if (registros == 0)
+                lblMensagem.Text = "Nenhuma informação encontrada";
+            else
+                lblMensagem.Text = "Foram encontrados: " + registros + "resultado(s)";
         }
         private void Carrega2()
         {
@@ -56,13 +69,31 @@ namespace CredlineFinanceira.Paginas.Listar
                     codigo = Convert.ToInt32(e.CommandArgument);
                     EmprestimoBD bd = new EmprestimoBD();
                     bd.Delete(codigo);
-                    Carrega();
+                    CarregaGrid("");
                     break;
                 default:
                     break;
             }
 
         }
+        protected void btnPesquisar_Click(object sender, EventArgs e)
+        {
+            string termo = txtPesquisa.Text.Trim();
+            if (termo != string.Empty)
+            {
+                CarregaGrid(termo);
+            }
+            else
+            {
+                CarregaGrid("");
+                txtPesquisa.Focus();
+            }
+        }
+
+
+
     }
-    
+   
 }
+
+    

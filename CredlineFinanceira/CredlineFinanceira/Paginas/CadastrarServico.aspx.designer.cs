@@ -22,13 +22,13 @@ namespace CredlineFinanceira.Paginas {
         protected global::System.Web.UI.HtmlControls.HtmlForm FormularioSER;
         
         /// <summary>
-        /// Controle lblCadastro.
+        /// Controle lblTitulo.
         /// </summary>
         /// <remarks>
         /// Campo gerado automaticamente.
         /// Modificar a declaração do campo de movimento do arquivo de designer para o arquivo code-behind.
         /// </remarks>
-        protected global::System.Web.UI.WebControls.Label lblCadastro;
+        protected global::System.Web.UI.WebControls.Label lblTitulo;
         
         /// <summary>
         /// Controle lblNome.

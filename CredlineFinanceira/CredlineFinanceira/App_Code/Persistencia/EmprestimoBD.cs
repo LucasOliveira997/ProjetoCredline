@@ -50,8 +50,23 @@ namespace CredlineFinanceira.App_Code.Persistencia
             objConexao.Dispose();
             return ds;
         }
-        //select
-        
+        //selectvenda
+        public DataSet SelectVenda()
+        {
+            DataSet ds = new DataSet();
+            System.Data.IDbConnection objConexao;
+            System.Data.IDbCommand objCommand;
+            System.Data.IDataAdapter objDataAdapter;
+            objConexao = Mapped.Connection();
+            objCommand = Mapped.Command("select e.emp_codigo, emp_data, emp_tipo, emp_valor, emp_qntdParcela, emp_valorParcela, emp_status, emp_id, tax_taxaJuros, cli_cpf, usu_nome, loj_id from emp_emprestimo e inner join ven_venda v on e.emp_codigo = v.emp_codigo inner join usu_usuario u on u.usu_codigo = v.usu_codigo inner join tax_taxa t on t.tax_codigo = v.tax_codigo inner join cli_cliente c on c.cli_codigo = v.cli_codigo inner join loj_loja l on l.loj_codigo = v.loj_codigo;", objConexao);
+            objDataAdapter = Mapped.Adapter(objCommand);
+            objDataAdapter.Fill(ds);
+            objConexao.Close();
+            objCommand.Dispose();
+            objConexao.Dispose();
+            return ds;
+        }
+
         //delete 
         public bool Delete(int Emprestimo)
         {
@@ -118,6 +133,26 @@ namespace CredlineFinanceira.App_Code.Persistencia
             objCommand.Dispose();
             objConexao.Dispose();
             return true;
+        }
+        //Search
+        public DataSet Search(string termo)
+        {
+            DataSet ds = new DataSet();
+            System.Data.IDbConnection objConexao;
+            System.Data.IDbCommand objCommand;
+            System.Data.IDataAdapter objDataAdapter;
+            objConexao = Mapped.Connection();
+            objCommand = Mapped.Command("select e.emp_codigo, emp_data, emp_tipo , emp_valor, emp_qntdParcela, emp_valorParcela, emp_status, emp_id, tax_taxaJuros, cli_cpf, usu_nome, loj_id from emp_emprestimo e inner join ven_venda v on e.emp_codigo = v.emp_codigo inner join usu_usuario u on u.usu_codigo = v.usu_codigo inner join tax_taxa t on t.tax_codigo = v.tax_codigo inner join cli_cliente c on c.cli_codigo = v.cli_codigo inner join loj_loja l on l.loj_codigo = v.loj_codigo WHERE emp_id LIKE ?Id  or cli_cpf LIKE ?cpf or loj_id like ?Loja or usu_nome like ?usuario ORDER BY cli_nome", objConexao);
+            objCommand.Parameters.Add(Mapped.Parameter("?cpf", '%' + termo + '%'));
+            objCommand.Parameters.Add(Mapped.Parameter("?Id", '%' + termo + '%'));
+            objCommand.Parameters.Add(Mapped.Parameter("?Loja", '%' + termo + '%'));
+            objCommand.Parameters.Add(Mapped.Parameter("?usuario", '%' + termo + '%'));
+            objDataAdapter = Mapped.Adapter(objCommand);
+            objDataAdapter.Fill(ds);
+            objConexao.Close();
+            objCommand.Dispose();
+            objConexao.Dispose();
+            return ds;
         }
 
         //construtor
