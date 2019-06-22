@@ -8,13 +8,21 @@
     <title></title>
 </head>
 <body>
+   
     <form id="form1" runat="server">
         <div>
             <asp:Label ID="lblTitulo" runat="server" Text="Tela principal do Funcionario"></asp:Label>
             <br />
             <div>>
                 <a href="../../CadastrarCliente.aspx">Cadastrar Cliente</a>
+                <a href="../../CadastarLoja.aspx">Cadastrar Loja</a>
+                <a href="../../CadastrarUsuario.aspx">Cadastrar Usuario</a>    
+                <a href="../../CadastroVenda.aspx">Cadastrar Venda</a>
+                 <a href="../../CadastrarTaxa.aspx">Cadastrar Taxa</a>
+                 <a href="../../CadastrarServico.aspx">Cadastrar Serviço</a>
+
             </div>
+          
             <br />
             <asp:LinkButton ID="lbSair" runat="server" OnClick="lbSair_Click">Sair</asp:LinkButton>
         </div>

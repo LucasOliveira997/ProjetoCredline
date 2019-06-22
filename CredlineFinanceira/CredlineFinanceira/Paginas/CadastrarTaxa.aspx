@@ -8,6 +8,13 @@
     <title></title>
 </head>
 <body>
+    <div>
+        <a href="Login/Admin/Index.aspx">Home admin</a>
+        <br />
+        <a href="Login/Funcionario/Index.aspx">Home Funcionario</a>
+        <br />
+        <a href=""></a>
+    </div>
     <form id="form1" runat="server">
         <div>
             <asp:Label ID="CadastroTaxa" runat="server" Text="Cadastro de Taxas"></asp:Label>

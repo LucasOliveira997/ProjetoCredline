@@ -18,6 +18,11 @@
         <div class="container-fluid">
             <div class="row">
                 <div class="col-md-12">
+                    <div>
+                     <a href="Login/Admin/Index.aspx">Home admin</a>
+                        <br />
+                    <a href="Login/Funcionario/Index.aspx">Home Funcionario</a>
+                   </div>
                     <h3>
                     <asp:Label ID="lblCadastro" runat="server" Text="Cadastro de Clientes"></asp:Label>
                         </h3>

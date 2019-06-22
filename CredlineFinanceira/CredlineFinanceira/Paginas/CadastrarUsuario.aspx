@@ -13,6 +13,13 @@
     </style>
 </head>
 <body>
+    <div>
+        <a href="Login/Admin/Index.aspx">Home admin</a>
+        <br />
+        <a href="Login/Funcionario/Index.aspx">Home Funcionario</a>
+        <br />
+        <a href="Listar/ListarUsuario.aspx">Lista de usuarios</a>
+    </div>
     <form id="form1" runat="server">
         <div> <asp:Label ID="lblCadastro" runat="server" Text="Cadastro de Usuário"></asp:Label>
             <br />
