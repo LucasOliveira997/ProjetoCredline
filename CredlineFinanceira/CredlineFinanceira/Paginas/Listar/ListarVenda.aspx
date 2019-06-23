@@ -50,6 +50,11 @@
         #corpo{
             font-family:Arial;
         }
+        #gd{
+            width: 1200px;
+            height: 350px;
+            overflow-y: auto;
+        }
     </style>
 
 
@@ -92,7 +97,8 @@
                        <br />
         </div>
         <div>
-            <div class="form-group">
+            <div class="col-sm-12">
+            <div id="gd" class="form-group">
             <asp:Label ID="lblTitulo" runat="server" Text="Lista de vendas"></asp:Label>
             <br />
             <asp:GridView ID="GridView1" runat="server" OnRowCommand="GridView1_RowCommand" CssClass="gridview">
@@ -111,6 +117,7 @@
                     </asp:TemplateField>
                 </Columns>
             </asp:GridView>
+                </div>
                 </div>
             <br />
             <br />

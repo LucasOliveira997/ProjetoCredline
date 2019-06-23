@@ -71,7 +71,7 @@ namespace CredlineFinanceira.App_Code.Persistencia
         public bool Delete(int Emprestimo)
         {
             System.Data.IDbConnection objConexao; System.Data.IDbCommand objCommand;
-            string sql = "DELETE FROM emp_emprestimo WHERE emp_codigo=?CodigoEMP";
+            string sql = "SET foreign_key_checks = 0; Delete from emp_emprestimo where emp_codigo = ?CodigoEMP; SET foreign_key_checks = 1; ";
             objConexao = Mapped.Connection();
             objCommand = Mapped.Command(sql, objConexao);
             objCommand.Parameters.Add(Mapped.Parameter("?CodigoEMP", Emprestimo));

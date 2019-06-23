@@ -63,6 +63,7 @@
                             <li><a href="../../CadastroVenda.aspx">Cadastrar Venda</a></li>
                             <li><a href="../../CadastrarTaxa.aspx">Cadastrar Taxa</a></li>
                             <li><a href="../../CadastrarServico.aspx">Cadastrar Serviço</a></li>
+                            <li><a href="../../Simular.aspx">Simular empréstimo</a></li>
                             <li> <asp:LinkButton ID="lbSair" runat="server" OnClick="lbSair_Click">Sair</asp:LinkButton></li>
                         </ul>
                     </nav>

@@ -204,6 +204,7 @@
     <Content Include="Paginas\Login\Funcionario\Index.aspx" />
     <Content Include="Paginas\Login\images\fundinho.jpg" />
     <Content Include="Paginas\Login\Login.aspx" />
+    <Content Include="Paginas\Simular.aspx" />
     <Content Include="Paginas\StyleSheet1.css" />
     <Content Include="Paginas\Vincular\VincularUsuLoj.aspx" />
     <Content Include="Paginas\Vincular\VincularVenda.aspx" />
@@ -409,6 +410,13 @@
     </Compile>
     <Compile Include="Paginas\Login\Login.aspx.designer.cs">
       <DependentUpon>Login.aspx</DependentUpon>
+    </Compile>
+    <Compile Include="Paginas\Simular.aspx.cs">
+      <DependentUpon>Simular.aspx</DependentUpon>
+      <SubType>ASPXCodeBehind</SubType>
+    </Compile>
+    <Compile Include="Paginas\Simular.aspx.designer.cs">
+      <DependentUpon>Simular.aspx</DependentUpon>
     </Compile>
     <Compile Include="Paginas\Vincular\VincularUsuLoj.aspx.cs">
       <DependentUpon>VincularUsuLoj.aspx</DependentUpon>
