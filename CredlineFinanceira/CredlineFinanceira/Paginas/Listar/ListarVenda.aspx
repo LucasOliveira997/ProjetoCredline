@@ -116,7 +116,7 @@
             <div id="gd" class="form-group">
             <asp:Label ID="lblTitulo" runat="server" Text="Lista de vendas"></asp:Label>
             <br />
-            <asp:GridView ID="GridView1" runat="server" OnRowCommand="GridView1_RowCommand" CssClass="gridview">
+            <asp:GridView ID="GridView1" runat="server" OnRowCommand="GridView1_RowCommand" GridLines="None" CssClass="table table-stripped">
                 <Columns>
                     <asp:TemplateField>
                         <ItemTemplate>
