@@ -9,7 +9,7 @@
     <meta http-equiv="Content-Type" content="text/html; charset=utf-8" />
         <meta name="viewport" content="width=device-width, initial-scale=1" />
 
-    <title></title>
+    <title>Cadastrar Cliente</title>
     <script src="../Scripts/bootstrap.min.js"></script>
     <script src="../Scripts/jquery-3.3.1.min.js"></script>
     <link href="../Content/bootstrap.min.css" rel="stylesheet" />
@@ -155,6 +155,7 @@
                 </div>
             </div>
         </div>
+       
     </form>
 </body>
 </html>

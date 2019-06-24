@@ -105,13 +105,13 @@
                 <Columns>
                     <asp:TemplateField>
                         <ItemTemplate>
-                            <asp:LinkButton ID="lbAlterar" runat="server" CommandName="Alterar"
+                            <asp:LinkButton CssClass="btn" ID="lbAlterar" runat="server" CommandName="Alterar"
                                 CommandArgument='<%# Bind("emp_codigo")%>'>Alterar</asp:LinkButton>
                         </ItemTemplate>
                     </asp:TemplateField>
                     <asp:TemplateField>
                         <ItemTemplate>
-                            <asp:LinkButton ID="lbDeletar" runat="server" CommandName="Deletar"
+                            <asp:LinkButton CssClass="btn" ID="lbDeletar" runat="server" CommandName="Deletar"
                                 CommandArgument='<%# Bind("emp_codigo")%>'>Excluir</asp:LinkButton>
                         </ItemTemplate>
                     </asp:TemplateField>

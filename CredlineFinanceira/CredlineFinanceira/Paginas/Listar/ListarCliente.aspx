@@ -86,7 +86,7 @@
                     <br />
                 </div>
                          <div class="form-group">
-                        <asp:GridView ID="GridView1" runat="server" OnRowCommand="GridView1_RowCommand" CssClass="gridview">
+                        <asp:GridView ID="GridView1" CssClass="form-control" runat="server" OnRowCommand="GridView1_RowCommand"  >
                 <Columns>
                     <asp:TemplateField>
                         <ItemTemplate>
