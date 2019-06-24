@@ -16,6 +16,11 @@
             font-family: Arial;
         }
 
+        h1{
+            color: white;
+            text-align: center;
+        }
+
         #GridView1 {
             font-family: Arial;
         }
@@ -61,17 +66,24 @@
         <div class="container-fluid">
             <div class="row">
                 <div id="menu" class="col-sm-12">
-                     <h1><asp:Label ID="Label1" runat="server" Text="Lista de Usuarios"></asp:Label></h1>
+                     <h1>CREDLINE FINANCEIRA</h1>
                     <br />
                     <br />
                     <nav id="H">
                         <ul>
+                            <li><a href="../Login/Admin/Index.aspx">Home Admin</a></li>
+                            <li><a href="../Login/Funcionario/Index.aspx">Home Funcionário</a></li>
                             <li><a href="../CadastrarCliente.aspx">Cadastrar Cliente</a></li>
                             <li><a href="../CadastarLoja.aspx">Cadastrar Loja</a></li>
                             <li><a href="../CadastrarUsuario.aspx">Cadastrar Usuario</a></li>
                             <li><a href="../CadastroVenda.aspx">Cadastrar Venda</a></li>
                             <li><a href="../CadastrarTaxa.aspx">Cadastrar Taxa</a></li>
                             <li><a href="../CadastrarServico.aspx">Cadastrar Serviço</a></li>
+                            <li><a href="ListarCliente.aspx">Listar Cliente</a></li>
+                            <li><a href="ListarLoja.aspx">Listar Loja</a></li>
+                            <li><a href="ListarUsuario.aspx">Listar Usuário</a></li>
+                            <li><a href="ListarVenda.aspx">Listar Venda</a></li>
+                            
                         </ul>
                     </nav>
                   </div>                  
@@ -83,6 +95,7 @@
                    <div class="form-group">
                        <br />
         <div>
+            <h2><asp:Label ID="Label1" runat="server" Text="Lista de Usuarios"></asp:Label></h2>
             <asp:GridView ID="GridView1" runat="server" OnRowCommand="GridView1_RowCommand" CssClass="gridview">
                 <Columns>
                     <asp:TemplateField>

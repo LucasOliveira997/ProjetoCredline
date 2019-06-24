@@ -31,6 +31,15 @@ namespace CredlineFinanceira.Paginas {
         protected global::System.Web.UI.WebControls.Label Label1;
         
         /// <summary>
+        /// Controle lblMensagem.
+        /// </summary>
+        /// <remarks>
+        /// Campo gerado automaticamente.
+        /// Modificar a declaração do campo de movimento do arquivo de designer para o arquivo code-behind.
+        /// </remarks>
+        protected global::System.Web.UI.WebControls.Label lblMensagem;
+        
+        /// <summary>
         /// Controle lblNome.
         /// </summary>
         /// <remarks>
@@ -209,14 +218,5 @@ namespace CredlineFinanceira.Paginas {
         /// Modificar a declaração do campo de movimento do arquivo de designer para o arquivo code-behind.
         /// </remarks>
         protected global::System.Web.UI.WebControls.Button btnSalvar;
-        
-        /// <summary>
-        /// Controle lblMensagem.
-        /// </summary>
-        /// <remarks>
-        /// Campo gerado automaticamente.
-        /// Modificar a declaração do campo de movimento do arquivo de designer para o arquivo code-behind.
-        /// </remarks>
-        protected global::System.Web.UI.WebControls.Label lblMensagem;
     }
 }

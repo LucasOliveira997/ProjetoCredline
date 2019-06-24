@@ -17,6 +17,11 @@
              font-family: Arial;
         }
 
+        h1{
+            color: white;
+            text-align: center;
+        }
+
         #menu {
             height: 100px;
             background-color: darkorange;
@@ -60,17 +65,23 @@
                     <div id="menu">
 
                         <h1>
-                            <asp:Label ID="Label1" runat="server" Text="Cadastro de Venda"></asp:Label></h1>
+                            CREDLINE FINANCEIRA</h1>
                         <br />
                         <br />
                         <nav id="H">
                             <ul>
+                                <li><a href="Login/Admin/Index.aspx">Home Admin</a></li>
+                                <li><a href="Login/Funcionario/Index.aspx">Home Funcionário</a></li>
                                 <li><a href="CadastrarCliente.aspx">Cadastrar Cliente</a></li>
                                 <li><a href="CadastarLoja.aspx">Cadastrar Loja</a></li>
                                 <li><a href="CadastrarUsuario.aspx">Cadastrar Usuario</a></li>
                                 <li><a href="CadastroVenda.aspx">Cadastrar Venda</a></li>
                                 <li><a href="CadastrarTaxa.aspx">Cadastrar Taxa</a></li>
                                 <li><a href="CadastrarServico.aspx">Cadastrar Serviço</a></li>
+                                <li><a href="Simular.aspx">Simular Empréstimo</a></li>
+                                <li><a href="Listar/ListarCliente.aspx">Listar Cliente</a></li>
+                                <li><a href="Listar/ListarLoja.aspx">Listar Loja</a></li>
+                                <li><a href="Listar/ListarUsuario.aspx">Listar Usuário</a></li>
                                 <li><a href="Listar/ListarVenda.aspx">Listar Venda</a></li>
 
 
@@ -85,7 +96,7 @@
                         <div class="col-sm-12">
                             <br />
                             <br />
-
+                            <h2><asp:Label ID="Label1" runat="server" Text="Cadastro de Venda"></asp:Label></h2>
                             <h4>
                                 <asp:Label ID="lblSimular" runat="server" Text="Simular empréstimo"></asp:Label>
                             </h4>

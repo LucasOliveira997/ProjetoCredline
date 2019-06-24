@@ -17,6 +17,12 @@
         #titulo{
             font-family: Arial;
         }
+        #lblLogin{
+            font-family: Arial;
+        }
+        #lblSenha{
+            font-family: Arial;
+        }
     </style>
     
 </head>
@@ -30,7 +36,7 @@
 			<div class="mail-form-agile">
 				<form id="form1" runat="server">
 					<br />
-					<asp:Label ID="lblLogin" runat="server" Text="Login" Font-Bold="True" Font-Size="Larger" ForeColor="White"></asp:Label>
+					<asp:Label id="lblLogin" runat="server" Text="Login" Font-Bold="True" Font-Size="Larger" ForeColor="White"></asp:Label>
 					<asp:TextBox ID="txtLogin" runat="server"></asp:TextBox>
 					<br />
                     <br />
@@ -47,7 +53,7 @@
 		</div>
 		
 		<div class="footer">
-		<p>© 2017  Master  Login form. All Rights Reserved | Design by w3layouts</p>
+		
 		</div>
 	</div>
 </body>

@@ -21,6 +21,10 @@
             font-family: Arial;
         }
 
+        h1 {
+            color: white;
+        }
+
         #GridView1 {
             font-family: Arial;
         }
@@ -62,19 +66,25 @@
             <div class="row">
                 <div class="col-sm-12">
                     <div id="menu">
-                        <h1>
-                            <asp:Label ID="Label1" runat="server" Text="Cadastro de Cliente"></asp:Label></h1>
+                        <h1 style="text-align: center"><asp:Label ID="Label1" runat="server" Text="CREDLINE FINANCEIRA"></asp:Label></h1>
+
                         <br />
                         <br />
                         <nav id="H">
                             <ul>
+                                <li><a href="Login/Admin/Index.aspx">Home Admin</a></li>
+                                <li><a href="Login/Funcionario/Index.aspx">Home Funcionário</a></li>
                                 <li><a href="CadastrarCliente.aspx">Cadastrar Cliente</a></li>
                                 <li><a href="CadastarLoja.aspx">Cadastrar Loja</a></li>
                                 <li><a href="CadastrarUsuario.aspx">Cadastrar Usuario</a></li>
                                 <li><a href="CadastroVenda.aspx">Cadastrar Venda</a></li>
                                 <li><a href="CadastrarTaxa.aspx">Cadastrar Taxa</a></li>
                                 <li><a href="CadastrarServico.aspx">Cadastrar Serviço</a></li>
+                                <li><a href="Simular.aspx">Simular Empréstimo</a></li>
                                 <li><a href="Listar/ListarCliente.aspx">Listar Cliente</a></li>
+                                <li><a href="Listar/ListarLoja.aspx">Listar Loja</a></li>
+                                <li><a href="Listar/ListarUsuario.aspx">Listar Usuário</a></li>
+                                <li><a href="Listar/ListarVenda.aspx">Listar Venda</a></li>  
                             </ul>
                         </nav>
                         <br />
@@ -87,10 +97,12 @@
                     <div class="row">
                             <div class="col-sm-12">
                                 <br />
-                                <br />
-                            
-                                <br />
+                                
                                 <div class="form-group">
+                                    
+                                    <br />
+                                    <asp:Label ID="lblMensagem" runat="server" Text=""></asp:Label>
+                                    <br /> <br />
                                     <asp:Label ID="lblNome" runat="server" Text="Nome:"></asp:Label>
                                     <br />
                                     <asp:TextBox ID="txtNome" runat="server" CssClass="form-control"></asp:TextBox>
@@ -148,7 +160,7 @@
                                 <div class="form-group">
                                     <asp:Button ID="btnSalvar" runat="server" Text="Salvar" OnClick="btnSalvar_Click" CssClass="btn btn-primary" />
                                     <br />
-                                    <asp:Label ID="lblMensagem" runat="server" Text=""></asp:Label>
+                                    
                                 </div>
                             </div>
                     </div>

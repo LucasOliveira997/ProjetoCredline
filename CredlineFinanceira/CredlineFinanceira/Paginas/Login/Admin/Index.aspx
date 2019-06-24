@@ -15,8 +15,15 @@
             background-color: darkorange;
             font-family:Arial;
         }
+        h1{
+            color: white;
+            text-align: center;
+        }
        #GridView1{
            font-family:Arial;
+           border: solid;
+           border-color: black;
+           
        }
        #H ul {
             padding: 0px;
@@ -52,11 +59,12 @@
         <div class="container-fluid">
             <div class="row">
                 <div id="menu" class="col-sm-12">
-                    <h1><asp:Label ID="lblTitulo" runat="server" Text="Home"></asp:Label></h1>
+                    <h1>CREDLINE FINANCEIRA</h1>
                     <br />
                     <br />
                     <nav id="H">
                         <ul>
+                            <li><a href="#">Home Admin</a></li>
                             <li><a href="../../CadastrarCliente.aspx">Cadastrar Cliente</a></li>
                             <li><a href="../../CadastarLoja.aspx">Cadastrar Loja</a></li>
                             <li><a href="../../CadastrarUsuario.aspx">Cadastrar Usuario</a></li>
@@ -64,6 +72,12 @@
                             <li><a href="../../CadastrarTaxa.aspx">Cadastrar Taxa</a></li>
                             <li><a href="../../CadastrarServico.aspx">Cadastrar Serviço</a></li>
                             <li><a href="../../Simular.aspx">Simular empréstimo</a></li>
+                            <li><a href="../../Listar/ListarCliente.aspx">Listar Cliente</a></li>
+                            <li><a href="../../Listar/ListarLoja.aspx">Listar Loja</a></li>
+                            <li><a href="../../Listar/ListarUsuario.aspx">Listar Usuário</a></li>
+                            <li><a href="../../Listar/ListarVenda.aspx">Listar Venda</a></li>
+
+
                             <li> <asp:LinkButton ID="lbSair" runat="server" OnClick="lbSair_Click">Sair</asp:LinkButton></li>
                         </ul>
                     </nav>
@@ -75,6 +89,8 @@
                <div class="col-sm-12">
                    <div class="form-group">
                        <br />
+                       <br />
+                       <h2 style="font-family: Arial"><asp:Label ID="lblTitulo" runat="server" Text="Home"></asp:Label></h2>
                        <br />
                <asp:GridView ID="GridView1" runat="server"></asp:GridView>
                        </div>
