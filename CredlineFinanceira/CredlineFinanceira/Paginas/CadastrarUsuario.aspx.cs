@@ -15,17 +15,6 @@ namespace CredlineFinanceira.Paginas
 
         private void Carrega()
         {
-            //Carrega Produtos
-            LojaBD lojabd = new LojaBD();
-            DataSet lojads = lojabd.SelectAll();
-            //vincula produtos ao dropdownlist
-            dpdLoja.DataSource = lojads.Tables[0].DefaultView;
-            dpdLoja.DataTextField = "loj_id";
-            dpdLoja.DataValueField = "loj_codigo";
-            dpdLoja.DataBind();
-            dpdLoja.Items.Insert(0, "Selecione");
-
-
         }
 
         protected void Page_Load(object sender, EventArgs e)
@@ -50,8 +39,6 @@ namespace CredlineFinanceira.Paginas
             usuario.Cargo = Convert.ToBoolean(dpdCargo.SelectedItem.Value);
 
             UsuarioBD bd = new UsuarioBD();
-            
-        
             if (bd.Insert(usuario))
             {
                 lblMensagem.Text = "Usuario cadastrado com sucesso";
