@@ -64,8 +64,8 @@
     <form id="form1" runat="server">
         <div class="container-fluid">
             <div class="row">
-                <div class="col-sm-12">
-                    <div id="menu">
+                <div id="menu" class="col-sm-12">
+                    
                         <h1 style="text-align: center"><asp:Label ID="Label1" runat="server" Text="CREDLINE FINANCEIRA"></asp:Label></h1>
 
                         <br />
@@ -88,10 +88,8 @@
                             </ul>
                         </nav>
                         <br />
-                        <br />
-
-                        <br />
-                    </div>
+                        
+                    
 
 
                     <div class="row">
@@ -164,6 +162,7 @@
                                 </div>
                             </div>
                     </div>
+               
                 </div>
             </div>
         </div>

@@ -62,8 +62,8 @@
     <form id="form1" runat="server">
         <div class="container-fluid">
             <div class="row">
-                <div class="col-sm-12">
-                    <div id="menu">
+                <div id="menu" class="col-sm-12">
+                    
                         <h1>
                             CREDLINE FINANCEIRA</h1>
                         <br />
@@ -91,7 +91,7 @@
                         <br />
 
                         <br />
-                    </div>
+                    
                     <div class="row">
                         <div class="col-sm-12">
                             <br />
