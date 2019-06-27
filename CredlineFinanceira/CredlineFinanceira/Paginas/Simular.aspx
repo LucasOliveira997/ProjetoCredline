@@ -96,10 +96,8 @@
                         <div class="col-sm-12">
                             <br />
                             <br />
-                            <h2><asp:Label ID="Label1" runat="server" Text="Cadastro de Venda"></asp:Label></h2>
-                            <h4>
-                                <asp:Label ID="lblSimular" runat="server" Text="Simular empréstimo"></asp:Label>
-                            </h4>
+                            <h2><asp:Label ID="Label1" runat="server" Text="Simular empréstimo"></asp:Label></h2>
+
                             <br />
                             <br />
                             <div class="form-group">

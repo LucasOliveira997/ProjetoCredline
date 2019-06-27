@@ -31,15 +31,6 @@ namespace CredlineFinanceira.Paginas {
         protected global::System.Web.UI.WebControls.Label Label1;
         
         /// <summary>
-        /// Controle lblSimular.
-        /// </summary>
-        /// <remarks>
-        /// Campo gerado automaticamente.
-        /// Modificar a declaração do campo de movimento do arquivo de designer para o arquivo code-behind.
-        /// </remarks>
-        protected global::System.Web.UI.WebControls.Label lblSimular;
-        
-        /// <summary>
         /// Controle lblValor.
         /// </summary>
         /// <remarks>
