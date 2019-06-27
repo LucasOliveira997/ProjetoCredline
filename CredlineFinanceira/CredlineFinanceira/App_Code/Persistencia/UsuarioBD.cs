@@ -60,6 +60,22 @@ namespace CredlineFinanceira.App_Code.Persistencia
             objConexao.Dispose();
             return ds;
         }
+        //selectall 
+        public DataSet SelectUsuLoj()
+        {
+            DataSet ds = new DataSet();
+            System.Data.IDbConnection objConexao;
+            System.Data.IDbCommand objCommand;
+            System.Data.IDataAdapter objDataAdapter;
+            objConexao = Mapped.Connection();
+            objCommand = Mapped.Command("select U.usu_codigo, usu_nome, usu_telefone, usu_celular, usu_endereco, usu_dataContrato, usu_cpf, usu_login, usu_senha, usu_cargo, loj_id from ulo_usuarioLoja UL inner join usu_usuario U on U.usu_codigo = UL.usu_codigo inner join loj_loja L on L.loj_codigo = UL.loj_codigo", objConexao);
+            objDataAdapter = Mapped.Adapter(objCommand);
+            objDataAdapter.Fill(ds);
+            objConexao.Close();
+            objCommand.Dispose();
+            objConexao.Dispose();
+            return ds;
+        }
         //select
         public Usuario Select(int id)
         {

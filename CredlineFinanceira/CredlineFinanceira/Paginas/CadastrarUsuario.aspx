@@ -166,15 +166,7 @@
                                     <asp:ListItem Value="True">Admin</asp:ListItem>
                                 </asp:DropDownList>
                             </div>
-                            <div class="form-group">
-                                <br />
-                                <br />
-
-                                <asp:Label ID="lblLoja" runat="server" Text="Loja:"></asp:Label>
-                                <br />
-                                <asp:DropDownList ID="dpdLoja" runat="server" CssClass="form-control">
-                                </asp:DropDownList>
-                            </div>
+                           
                             <div class="form-group">
                                 <br />
 

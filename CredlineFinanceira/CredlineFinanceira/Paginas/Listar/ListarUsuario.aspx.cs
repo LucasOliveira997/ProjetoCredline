@@ -15,7 +15,7 @@ namespace CredlineFinanceira.Paginas.Listar
         private void Carrega()
         {
             UsuarioBD bd = new UsuarioBD();
-            DataSet ds = bd.SelectAll();
+            DataSet ds = bd.SelectUsuLoj();
             GridView1.DataSource = ds.Tables[0].DefaultView;
             GridView1.DataBind();
         }
