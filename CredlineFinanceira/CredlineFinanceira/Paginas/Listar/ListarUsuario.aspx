@@ -96,7 +96,7 @@
                        <br />
         <div>
             <h2><asp:Label ID="Label1" runat="server" Text="Lista de Usuarios"></asp:Label></h2>
-            <asp:GridView ID="GridView1" runat="server" OnRowCommand="GridView1_RowCommand" CssClass="gridview">
+            <asp:GridView ID="GridView1" runat="server" OnRowCommand="GridView1_RowCommand" AutoGenerateColumns="false" CssClass="gridview">
                 <Columns>
                     <asp:TemplateField>
                         <ItemTemplate>
@@ -110,6 +110,16 @@
                                 CommandArgument='<%# Bind("usu_codigo")%>'>Excluir</asp:LinkButton>
                         </ItemTemplate>
                     </asp:TemplateField>
+
+                    <asp:BoundField DataField="usu_nome" HeaderText="Nome"/>
+                    <asp:BoundField DataField="usu_telefone" HeaderText="Telefone"/>
+                    <asp:BoundField DataField="usu_celular" HeaderText="Celular"/>
+                    <asp:BoundField DataField="usu_endereco" HeaderText="Endereço"/>
+                    <asp:BoundField DataField="usu_dataContrato" HeaderText="Contratação"/>
+                    <asp:BoundField DataField="usu_cpf" HeaderText="CPF"/>
+                    <asp:BoundField DataField="usu_login" HeaderText="Login"/>
+                    <asp:BoundField DataField="usu_cargo" HeaderText="Cargo"/>
+       
                 </Columns>
             </asp:GridView>
         </div>

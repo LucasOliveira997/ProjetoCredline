@@ -100,7 +100,7 @@
                     <br />
                 </div>
                          <div class="form-group">
-                        <asp:GridView ID="GridView1" CssClass="form-control" runat="server" OnRowCommand="GridView1_RowCommand"  >
+                        <asp:GridView ID="GridView1" CssClass="form-control" runat="server" AutoGenerateColumns="false" OnRowCommand="GridView1_RowCommand"  >
                 <Columns>
                     <asp:TemplateField>
                         <ItemTemplate>
@@ -114,6 +114,16 @@
                                 CommandArgument='<%# Bind("cli_codigo")%>'>Excluir</asp:LinkButton>
                         </ItemTemplate>
                     </asp:TemplateField>
+                        <asp:BoundField DataField="cli_nome" HeaderText="Nome"/>
+                    <asp:BoundField DataField="cli_telefone" HeaderText="Telefone"/>
+                    <asp:BoundField DataField="cli_celular" HeaderText="Celular"/>
+                    <asp:BoundField DataField="cli_endereco" HeaderText="Endereço"/>
+                    <asp:BoundField DataField="cli_dataNascimento" HeaderText="Contratação"/>
+                    <asp:BoundField DataField="cli_cpf" HeaderText="CPF"/>
+                    <asp:BoundField DataField="cli_ocupacao" HeaderText="Ocupação"/>
+                    <asp:BoundField DataField="cli_renda" HeaderText="renda"/>
+                    <asp:BoundField DataField="cli_rg" HeaderText="RG"/>
+
                 </Columns>
                 </asp:GridView>
                              

@@ -21,9 +21,6 @@
             text-align: center;
         }
 
-        #GridView1 {
-            font-family: Arial;
-        }
 
         #H ul {
             padding: 0px;
@@ -56,6 +53,7 @@
         #corpo {
             font-family: Arial;
         }
+
     </style>
 
 
@@ -96,7 +94,7 @@
                        <br />
                        <h2><asp:Label ID="Label1" runat="server" Text="Lista de Lojas"></asp:Label></h2>
         <div>
-            <asp:GridView ID="GridView1" runat="server" OnRowCommand="GridView1_RowCommand" CssClass="gridview">
+            <asp:GridView ID="GridView1" runat="server" OnRowCommand="GridView1_RowCommand" AutoGenerateColumns="false" CssClass="table table-striped" >
                 <Columns>
                     <asp:TemplateField>
                         <ItemTemplate>
@@ -110,6 +108,12 @@
                                 CommandArgument='<%# Bind("loj_codigo")%>'>Excluir</asp:LinkButton>
                         </ItemTemplate>
                     </asp:TemplateField>
+
+                    <asp:BoundField DataField="loj_cnpj" HeaderText="CNPJ"/>
+                    <asp:BoundField DataField="loj_id" HeaderText="ID"/>
+                    <asp:BoundField DataField="loj_endereco" HeaderText="Endereço"/>
+
+
                 </Columns>
                 </asp:GridView>
             </div>

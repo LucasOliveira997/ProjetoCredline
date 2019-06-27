@@ -116,7 +116,7 @@
             <div id="gd" class="form-group">
             <asp:Label ID="lblTitulo" runat="server" Text="Lista de vendas"></asp:Label>
             <br />
-            <asp:GridView ID="GridView1" runat="server" OnRowCommand="GridView1_RowCommand" GridLines="None" CssClass="table table-stripped">
+            <asp:GridView ID="GridView1" runat="server" OnRowCommand="GridView1_RowCommand" AutoGenerateColumns="false"  CssClass="table table-stripped">
                 <Columns>
                     <asp:TemplateField>
                         <ItemTemplate>
@@ -130,12 +130,23 @@
                                 CommandArgument='<%# Bind("emp_codigo")%>'>Excluir</asp:LinkButton>
                         </ItemTemplate>
                     </asp:TemplateField>
+                    <asp:BoundField DataField="emp_data" HeaderText="Data"/>
+                    <asp:BoundField DataField="emp_tipo" HeaderText="Tipo"/>
+                    <asp:BoundField DataField="emp_valor" HeaderText="Valor"/>
+                    <asp:BoundField DataField="emp_qntdParcela" HeaderText="Parcelas"/>
+                    <asp:BoundField DataField="emp_valorParcela" HeaderText="Valor Parcela"/>
+                    <asp:BoundField DataField="emp_status" HeaderText="Status"/>
+                    <asp:BoundField DataField="emp_id" HeaderText="ID"/>
+                    <asp:BoundField DataField="tax_taxaJuros" HeaderText="Taxa"/>
+                    <asp:BoundField DataField="cli_cpf" HeaderText="CPF Cliente"/>
+                    <asp:BoundField DataField="usu_nome" HeaderText="Funcionário"/>
+                    <asp:BoundField DataField="loj_id" HeaderText="Loja"/>
+
+
                 </Columns>
             </asp:GridView>
                 </div>
                 </div>
-            <br />
-            <br />
             <div class="form-group">
             <asp:Label ID="lblTitulo2" runat="server" Text="Valor médio por tipo"></asp:Label>
             <br />
