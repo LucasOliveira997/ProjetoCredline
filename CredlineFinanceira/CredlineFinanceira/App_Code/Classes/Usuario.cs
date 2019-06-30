@@ -13,11 +13,11 @@ namespace CredlineFinanceira.App_Code.Classes
     {
         public int Codigo { get; set; }
         public string Nome { get; set; }
-        public int Telefone { get; set; }
-        public int Celular { get; set; }
+        public string Telefone { get; set; }
+        public string Celular { get; set; }
         public string Endereco { get; set; }
         public DateTime DataContrato { get; set; }
-        public int Cpf { get; set; }
+        public string Cpf { get; set; }
         public string Login { get; set; }
         public string Senha { get; set; }
         public bool Cargo { get; set; }

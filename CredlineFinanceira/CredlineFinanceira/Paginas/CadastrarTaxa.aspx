@@ -6,55 +6,60 @@
 <head runat="server">
     <meta http-equiv="Content-Type" content="text/html; charset=utf-8" />
     <meta name="viewport" content="width=device-width, initial-scale=1" />
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/bulma/0.6.1/css/bulma.css"/>
     <script src="../Scripts/bootstrap.min.js"></script>
     <script src="../Scripts/jquery-3.3.1.min.js"></script>
     <link href="../Content/bootstrap.min.css" rel="stylesheet" />
+    <title>Cadastro de Taxa</title>
 
-    <title></title>
     <style>
-        #menu {
+        html, body{
+            
+            height: 100%;
+        }
+
+        #menu{
             height: 100px;
             background-color: darkorange;
-            font-family: Arial;
+            font-family:Arial;
         }
-        h1 {
-            color: white;
-            text-align: center;
-            
-        }
+       
+       #GridView1{
+           font-family:Arial;
+           border: solid;
+           border-color: black;
+           
+       }  
+        
+    </style>
 
-        #GridView1 {
-            font-family: Arial;
-        }
+    <script>
+        document.addEventListener('DOMContentLoaded', function () {
 
-        #H ul {
-            padding: 0px;
-            margin: 0px;
-            background-color: #EDEDED;
-            list-style: none;
-            font-family: Arial;
-        }
+            // Get all "navbar-burger" elements
+            var $navbarBurgers = Array.prototype.slice.call(document.querySelectorAll('.navbar-burger'), 0);
 
-            #H ul li {
-                display: inline;
+            // Check if there are any navbar burgers
+            if ($navbarBurgers.length > 0) {
+
+                // Add a click event on each of them
+                $navbarBurgers.forEach(function ($el) {
+                    $el.addEventListener('click', function () {
+
+                        // Get the target from the "data-target" attribute
+                        var target = $el.dataset.target;
+                        var $target = document.getElementById(target);
+
+                        // Toggle the class on both the "navbar-burger" and the "navbar-menu"
+                        $el.classList.toggle('is-active');
+                        $target.classList.toggle('is-active');
+
+                    });
+                });
             }
 
-                #H ul li a {
-                    padding: 2px 10px;
-                    display: inline-block;
-                    /* visual do link */
-                    background-color: #EDEDED;
-                    color: #333;
-                    text-decoration: none;
-                    border-bottom: 3px solid #EDEDED;
-                }
-
-                    #H ul li a:hover {
-                        background-color: #D6D6D6;
-                        color: #6D6D6D;
-                        border-bottom: 3px solid #EA0000;
-                    }
-    </style>
+        });
+    </script>
 
 
 </head>
@@ -64,34 +69,83 @@
             <div class="row">
                 <div id="menu" class="col-sm-12">
                     
-                        <h1>
-                            CREDLINE FINANCEIRA</h1>
                         <br />
-                        <br />
-                        <nav id="H">
-                            <ul>
-                                <li><a href="Login/Admin/Index.aspx">Home Admin</a></li>
-                                <li><a href="Login/Funcionario/Index.aspx">Home Funcionário</a></li>
-                                <li><a href="CadastrarCliente.aspx">Cadastrar Cliente</a></li>
-                                <li><a href="CadastarLoja.aspx">Cadastrar Loja</a></li>
-                                <li><a href="CadastrarUsuario.aspx">Cadastrar Usuario</a></li>
-                                <li><a href="CadastroVenda.aspx">Cadastrar Venda</a></li>
-                                <li><a href="CadastrarTaxa.aspx">Cadastrar Taxa</a></li>
-                                <li><a href="CadastrarServico.aspx">Cadastrar Serviço</a></li>
-                                <li><a href="Simular.aspx">Simular Empréstimo</a></li>
-                                <li><a href="Listar/ListarCliente.aspx">Listar Cliente</a></li>
-                                <li><a href="Listar/ListarLoja.aspx">Listar Loja</a></li>
-                                <li><a href="Listar/ListarUsuario.aspx">Listar Usuário</a></li>
-                                <li><a href="Listar/ListarVenda.aspx">Listar Venda</a></li>
-                                
+                        <nav id="H">                            
+                        <nav class="navbar">
+                            <div class="navbar-brand">
+                                <a class="navbar-item" href="#">
+                                    <h4>CREDLINE FINANCEIRA</h4>
+                                </a>
+                                <div class="navbar-burger burger" data-target="navbarExampleTransparentExample">
+                                    <span></span>
+                                    <span></span>
+                                    <span></span>
+                                </div>
+                            </div>
+                            
 
-                            </ul>
+                            <div id="navbarExampleTransparentExample" class="navbar-menu">
+                                <div class="navbar-start">
+                                    <br /> <br />
+                                    <a class="navbar-item" href="Login/Admin/Index.aspx">Home Admin</a>
+                                    <a class="navbar-item" href="Login/Funcionario/Index.aspx">Home Funcionário</a>
+                                    <div class="navbar-item has-dropdown is-hoverable">
+                                        <a class="navbar-link" href="#">Cadastrar
+                                        </a>
+                                        <div class="navbar-dropdown is-boxed">
+                                            <a class="navbar-item" href="CadastrarCliente.aspx">Cliente
+                                            </a>
+                                            <a class="navbar-item" href="CadastroVenda.aspx">Empréstimo
+                                            </a>
+                                            <a class="navbar-item" href="CadastrarUsuario.aspx">Usuário
+                                            </a>
+                                            <a class="navbar-item" href="CadastarLoja.aspx">Loja
+                                            </a>
+                                            <a class="navbar-item" href="CadastrarServico.aspx">Serviço
+                                            </a>
+                                            <a class="navbar-item" href="CadastrarTaxa.aspx">Taxa
+                                            </a>
+                                        </div>
+                                    </div>
+
+                                    <div class="navbar-item has-dropdown is-hoverable">
+                                        <a class="navbar-link" href="#">Listar
+                                        </a>
+                                        <div class="navbar-dropdown is-boxed">
+                                            <a class="navbar-item" href="Listar/ListarCliente.aspx">Cliente
+                                            </a>
+                                            <a class="navbar-item" href="Listar/ListarVenda.aspx">Empréstimo
+                                            </a>
+                                            <a class="navbar-item" href="Listar/ListarUsuario.aspx">Usuário
+                                            </a>
+                                            <a class="navbar-item" href="Listar/ListarLoja.aspx">Loja
+                                            </a>
+                                            
+                                        </div>
+                                    </div>
+                                    <a class="navbar-item" href="Simular.aspx">Simular
+                                    </a>
+                                </div>
+
+                                <div class="navbar-end">
+                                    <div class="navbar-item">
+                                        <div class="field is-grouped">
+                                            <p class="control">
+                                                <a class="button is-primary" href="Login/Login.aspx">
+                                                    <span class="icon">
+                                                        <i class="fa fa-download"></i>
+                                                    </span>
+                                                    <span>Sair</span>
+                                                </a>
+                                            </p>
+                                        </div>
+                                    </div>
+                                </div>
+                            </div>
+                        </nav>
+                    
                         </nav>
                         <br />
-                        <br />
-
-                        <br />
-                    
                     <div class="row">
                         <div class="col-sm-12">
                             <br />

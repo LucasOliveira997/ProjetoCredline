@@ -48,7 +48,7 @@ namespace CredlineFinanceira.App_Code.Persistencia
             System.Data.IDbCommand objCommand;
             System.Data.IDataAdapter objDataAdapter;
             objConexao = Mapped.Connection();
-            objCommand = Mapped.Command("SELECT * FROM cli_cliente", objConexao);
+            objCommand = Mapped.Command("SELECT * FROM cli_cliente group by cli_nome", objConexao);
             objDataAdapter = Mapped.Adapter(objCommand);
             objDataAdapter.Fill(ds);
             objConexao.Close();

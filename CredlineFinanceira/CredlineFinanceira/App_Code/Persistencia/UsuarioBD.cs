@@ -92,11 +92,11 @@ namespace CredlineFinanceira.App_Code.Persistencia
                 obj = new Usuario();
                 obj.Codigo = Convert.ToInt32(objDataReader["usu_codigo"]);
                 obj.Nome = Convert.ToString(objDataReader["usu_nome"]);
-                obj.Telefone = Convert.ToInt32(objDataReader["usu_telefone"]);
-                obj.Celular = Convert.ToInt32(objDataReader["usu_celular"]);
+                obj.Telefone = Convert.ToString(objDataReader["usu_telefone"]);
+                obj.Celular = Convert.ToString(objDataReader["usu_celular"]);
                 obj.Endereco = Convert.ToString(objDataReader["usu_endereco"]);
                 obj.DataContrato = Convert.ToDateTime(objDataReader["usu_dataContrato"]);
-                obj.Cpf = Convert.ToInt32(objDataReader["usu_cpf"]);
+                obj.Cpf = Convert.ToString(objDataReader["usu_cpf"]);
                 obj.Login = Convert.ToString(objDataReader["usu_login"]);
                 obj.Senha = Convert.ToString(objDataReader["usu_senha"]);
                 obj.Cargo = Convert.ToBoolean(objDataReader["usu_cargo"]);

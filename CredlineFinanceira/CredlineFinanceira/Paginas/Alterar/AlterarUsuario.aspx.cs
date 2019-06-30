@@ -34,11 +34,11 @@ namespace CredlineFinanceira.Paginas.Alterar
             UsuarioBD bd = new UsuarioBD();
             Usuario usuario = bd.Select(Convert.ToInt32(Session["ID"]));
             usuario.Nome = txtNome.Text;
-            usuario.Telefone = Convert.ToInt32(txtTelefone.Text);
-            usuario.Celular = Convert.ToInt32(txtCelular.Text);
+            usuario.Telefone = txtTelefone.Text;
+            usuario.Celular = txtCelular.Text;
             usuario.Endereco = txtEndereco.Text;
             usuario.DataContrato = Convert.ToDateTime(txtDataContrato.Text);
-            usuario.Cpf = Convert.ToInt32(txtCpf.Text);
+            usuario.Cpf = txtCpf.Text;
             usuario.Login = txtLogin.Text;
             usuario.Senha = txtSenha.Text;
             usuario.Cargo = Convert.ToBoolean(dpdCargo.Text);

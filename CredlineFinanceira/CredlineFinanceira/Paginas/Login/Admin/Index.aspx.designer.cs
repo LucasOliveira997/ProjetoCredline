@@ -22,15 +22,6 @@ namespace CredlineFinanceira.Paginas.Login.Admin {
         protected global::System.Web.UI.HtmlControls.HtmlForm form1;
         
         /// <summary>
-        /// Controle lbSair.
-        /// </summary>
-        /// <remarks>
-        /// Campo gerado automaticamente.
-        /// Modificar a declaração do campo de movimento do arquivo de designer para o arquivo code-behind.
-        /// </remarks>
-        protected global::System.Web.UI.WebControls.LinkButton lbSair;
-        
-        /// <summary>
         /// Controle lblTitulo.
         /// </summary>
         /// <remarks>

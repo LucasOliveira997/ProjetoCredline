@@ -39,7 +39,7 @@ namespace CredlineFinanceira.Paginas.Listar
             if (registros == 0)
                 lblMensagem.Text = "Nenhuma informação encontrada";
             else
-                lblMensagem.Text = "Foram encontrados: " + registros + "resultado(s)";
+                lblMensagem.Text = "Foram encontrados: " + registros + " resultado(s)";
         }
         private void Carrega2()
         {

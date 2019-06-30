@@ -162,6 +162,7 @@
     <Content Include="Content\bootstrap.css.map" />
     <Content Include="Content\bootstrap-theme.min.css.map" />
     <Content Include="Content\bootstrap-theme.css.map" />
+    <Content Include="img\logo.png" />
     <Content Include="obj\Debug\build.force" />
     <Content Include="obj\Debug\CredlineFinanceira.csproj.CoreCompileInputs.cache" />
     <Content Include="obj\Debug\CredlineFinanceira.csproj.FileListAbsolute.txt" />

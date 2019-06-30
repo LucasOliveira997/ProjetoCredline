@@ -25,7 +25,7 @@ namespace CredlineFinanceira.Paginas.Login.Funcionario
             }
             else
             {
-                lblTitulo.Text = "Bem vindo (Funcionário) : " + usuario.Nome;
+                lblTitulo1.Text = "Bem vindo (Funcionário) : " + usuario.Nome;
             }
         }
         private void Carrega()

@@ -29,11 +29,11 @@ namespace CredlineFinanceira.Paginas
         {
             Usuario usuario = new Usuario();
             usuario.Nome = txtNome.Text;
-            usuario.Telefone = Convert.ToInt32(txtTelefone.Text);
-            usuario.Celular = Convert.ToInt32(txtCelular.Text);
+            usuario.Telefone = txtTelefone.Text;
+            usuario.Celular = txtCelular.Text;
             usuario.Endereco = txtEndereco.Text;
             usuario.DataContrato = Convert.ToDateTime(txtDataContrato.Text);
-            usuario.Cpf = Convert.ToInt32(txtCpf.Text);
+            usuario.Cpf = txtCpf.Text;
             usuario.Login = txtLogin.Text;
             usuario.Senha = txtSenha.Text;
             usuario.Cargo = Convert.ToBoolean(dpdCargo.SelectedItem.Value);
@@ -55,6 +55,8 @@ namespace CredlineFinanceira.Paginas
                 dpdCargo.Text = "";
                
                 txtNome.Focus();
+
+                Response.Redirect("Vincular/VincularUsuLoj.aspx");
             }
 
             else
@@ -63,18 +65,7 @@ namespace CredlineFinanceira.Paginas
             }
 
 
-            int codigo = 0;
-
-            codigo = Convert.ToInt32(bd.Insert(usuario));
-            if (codigo > 0)
-            {
-                Session["ID"] = codigo;
-                Response.Redirect("Vincular/VincularUsuLoj.aspx");
-            }
-            else
-            {
-                lblMensagem.Text = "Deu ruim ";
-            }
+            
 
 
         }
