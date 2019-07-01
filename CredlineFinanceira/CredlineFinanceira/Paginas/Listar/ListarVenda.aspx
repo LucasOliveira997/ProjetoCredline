@@ -4,14 +4,45 @@
 
 <html xmlns="http://www.w3.org/1999/xhtml">
 <head runat="server">
-<meta http-equiv="Content-Type" content="text/html; charset=utf-8"/>
-<meta name="viewport" content="width=device-width, initial-scale=1" />
-    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/bulma/0.6.1/css/bulma.css"/>
+    <title>Lista de Empréstimos</title>
+    <meta http-equiv="Content-Type" content="text/html; charset=utf-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1" />
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/bulma/0.6.1/css/bulma.css" />
     <script src="../../Scripts/bootstrap.min.js"></script>
     <script src="../../Scripts/jquery-3.3.1.min.js"></script>
     <link href="../../Content/bootstrap.min.css" rel="stylesheet" />
+    
+    <script type="text/javascript" src="https://www.gstatic.com/charts/loader.js"></script>
+    <script type="text/javascript">
+        google.charts.load('current', {packages: ['corechart', 'bar']});
+google.charts.setOnLoadCallback(drawBasic);
 
-    <title>Lista de Empréstimos</title>
+function drawBasic() {
+
+      var data = google.visualization.arrayToDataTable([
+        ['TIPO', 'Média por tipo',],
+        ['Consignado INSS', 15000],
+        ['Pessoal', 5700]
+      ]);
+
+      var options = {
+        title: 'Média de empréstimo por tipo',
+        chartArea: {width: '50%'},
+        hAxis: {
+          title: 'MÉDIA',
+          minValue: 0
+        },
+        vAxis: {
+          title: 'TIPO'
+        }
+      };
+
+      var chart = new google.visualization.BarChart(document.getElementById('chart_div'));
+
+      chart.draw(data, options);
+    }
+    </script>
+
     <style>
         html, body{
             
@@ -196,6 +227,7 @@
             <asp:Label ID="lblTitulo2" runat="server" Text="Valor médio por tipo"></asp:Label>
             <br />
             <asp:GridView ID="GridView2" runat="server" CssClass="gridview"></asp:GridView>
+                 <div id="chart_div"></div>
                 <br />
                 <br />
             </div>

@@ -12,6 +12,9 @@ namespace CredlineFinanceira.Paginas.Login.Admin
 {
     public partial class Index : System.Web.UI.Page
     {
+
+        
+
         protected void Page_Load(object sender, EventArgs e)
         {
 
@@ -28,6 +31,8 @@ namespace CredlineFinanceira.Paginas.Login.Admin
             {
                 lblTitulo.Text = "Bem vindo (Administrador) : " + usuario.Nome;
             }
+
+
         }
 
 

@@ -10,6 +10,39 @@
     <script src="../../../Scripts/bootstrap.min.js"></script>
     <script src="../../../Scripts/jquery-3.3.1.min.js"></script>
     <link href="../../../Content/bootstrap.min.css" rel="stylesheet" />
+
+    <script type="text/javascript" src="https://www.gstatic.com/charts/loader.js"></script>
+
+    <script type="text/javascript">
+        google.charts.load('current', {packages: ['corechart', 'line']});
+google.charts.setOnLoadCallback(drawBasic);
+
+function drawBasic() {
+
+      var data = new google.visualization.DataTable();
+      data.addColumn('string', 'Mês');
+      data.addColumn('number', 'Vendas');
+
+      data.addRows([
+        ['0' , 0],   ['janeiro' , 10],  [ 'fevereiro' , 23],  ['março', 17],  ['abril', 18], ['maio',20], 
+        ['junho', 12], ['julho', 30], ['agosto', 40], ['setembro', 22], ['outubro', 15], ['novembro', 17], ['dezembro', 32]
+      ]);
+
+      var options = {
+        hAxis: {
+          title: 'Mês'
+        },
+        vAxis: {
+          title: 'Vendas'
+        }
+      };
+
+      var chart = new google.visualization.LineChart(document.getElementById('chart_div'));
+
+      chart.draw(data, options);
+    }
+    </script>
+
     <style>
         html, body{
             
@@ -153,7 +186,15 @@
                        <br />
                        <br />
                <asp:GridView ID="GridView1" runat="server"></asp:GridView>
+
+                        <br />
+                       <br />
                        </div>
+                   <div class="form-group">
+                <h3>Vendas por mês</h3>
+
+                   <div id="chart_div"></div>
+            </div>
                </div>
             </div>
           </div>
