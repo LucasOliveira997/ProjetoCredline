@@ -29,7 +29,9 @@
            border: solid;
            border-color: black;
            
-       }  
+       }
+             
+       
         
     </style>
 
@@ -147,7 +149,7 @@
                         </nav>
                         <br />
                     
-                    <div class="row">
+                    <div class="row" style="text-align: center">
                         <div class="col-sm-12">
                             <br />
                             <br />
@@ -156,7 +158,7 @@
                             <br />
                             <br />
                             <div class="form-group">
-                                <asp:Label ID="lblValor" runat="server" Text="Valor Desejado:"></asp:Label>
+                                <asp:Label ID="lblValor" runat="server" Text="Valor Desejado(R$):"></asp:Label>
                                 <asp:TextBox ID="txtValor" runat="server"></asp:TextBox>
                                 <br />
                             </div>
@@ -176,12 +178,12 @@
                                 <br />
                             </div>
                             <div class="form-group">
-                                <asp:Label ID="lblTotal" runat="server" Text="Valor a prazo:"></asp:Label>
+                                <asp:Label ID="lblTotal" runat="server" Text="Valor a prazo(R$):"></asp:Label>
                                 <asp:TextBox ID="txtTotal" runat="server"></asp:TextBox>
                                 <br />
                             </div>
                             <div class="form-group">
-                                <asp:Label ID="lblParcela1" runat="server" Text="Valor das parcelas:"></asp:Label>
+                                <asp:Label ID="lblParcela1" runat="server" Text="Valor das parcelas(R$):"></asp:Label>
                                 <asp:TextBox ID="txtParcela1" runat="server"></asp:TextBox>
                             </div>
                             <br />

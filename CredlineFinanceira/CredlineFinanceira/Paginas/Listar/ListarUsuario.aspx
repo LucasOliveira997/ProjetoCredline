@@ -168,7 +168,7 @@
                     <asp:BoundField DataField="usu_dataContrato" HeaderText="Contratação"/>
                     <asp:BoundField DataField="usu_cpf" HeaderText="CPF"/>
                     <asp:BoundField DataField="usu_login" HeaderText="Login"/>
-                    <asp:BoundField DataField="usu_cargo" HeaderText="Cargo"/>
+                    
        
                 </Columns>
             </asp:GridView>

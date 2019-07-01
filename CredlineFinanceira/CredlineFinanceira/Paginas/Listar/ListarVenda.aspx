@@ -168,12 +168,7 @@
             <br />
             <asp:GridView ID="GridView1" runat="server" OnRowCommand="GridView1_RowCommand" AutoGenerateColumns="false"  CssClass="table table-stripped" GridLines="none">
                 <Columns>
-                    <asp:TemplateField>
-                        <ItemTemplate>
-                            <asp:LinkButton CssClass="btn btn-primary" ID="lbAlterar" runat="server" CommandName="Alterar"
-                                CommandArgument='<%# Bind("emp_codigo")%>'>Alterar</asp:LinkButton>
-                        </ItemTemplate>
-                    </asp:TemplateField>
+                    
                     <asp:TemplateField>
                         <ItemTemplate>
                             <asp:LinkButton CssClass="btn btn-danger" ID="lbDeletar" runat="server" CommandName="Deletar"

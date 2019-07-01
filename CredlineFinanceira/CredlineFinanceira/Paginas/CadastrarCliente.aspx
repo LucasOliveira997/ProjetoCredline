@@ -159,6 +159,9 @@
                                 <div class="form-group">
                                     
                                     <br />
+                                <h2><asp:Label ID="Label1" runat="server" Text="Cadastro de Cliente"></asp:Label></h2>
+                               
+                                <br />
                                     <asp:Label ID="lblMensagem" runat="server" Text=""></asp:Label>
                                     <br /> <br />
                                     <asp:Label ID="lblNome" runat="server" Text="Nome:"></asp:Label>
