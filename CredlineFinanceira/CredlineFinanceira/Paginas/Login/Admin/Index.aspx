@@ -10,39 +10,6 @@
     <script src="../../../Scripts/bootstrap.min.js"></script>
     <script src="../../../Scripts/jquery-3.3.1.min.js"></script>
     <link href="../../../Content/bootstrap.min.css" rel="stylesheet" />
-    
-    
-    <script type="text/javascript" src="https://www.gstatic.com/charts/loader.js"></script>
-
-    <script type="text/javascript">
-        google.charts.load('current', {packages: ['corechart', 'line']});
-google.charts.setOnLoadCallback(drawBasic);
-
-function drawBasic() {
-
-      var data = new google.visualization.DataTable();
-      data.addColumn('string', 'Mês');
-      data.addColumn('number', 'Vendas');
-
-      data.addRows([
-        ['0' , 0],   ['janeiro' , 10],  [ 'fevereiro' , 23],  ['março', 17],  ['abril', 18], ['maio',20], 
-        ['junho', 12], ['julho', 30], ['agosto', 40], ['setembro', 22], ['outubro', 15], ['novembro', 17], ['dezembro', 32]
-      ]);
-
-      var options = {
-        hAxis: {
-          title: 'Mês'
-        },
-        vAxis: {
-          title: 'Vendas'
-        }
-      };
-
-      var chart = new google.visualization.LineChart(document.getElementById('chart_div'));
-
-      chart.draw(data, options);
-    }
-    </script>
 
     
     
@@ -68,6 +35,18 @@ function drawBasic() {
            height: 100px;
             background-color: darkorange;
             font-family:Arial;
+       }
+
+       #GridView2{
+           width: 20%;
+           float: left;
+           background-color: yellow;
+       }
+
+       #GridView3{
+           width: 20%;
+           float: left;
+           background-color: lightgreen;
        }
     </style>
 
@@ -202,12 +181,18 @@ function drawBasic() {
                        <br />
                        <br />
                        </div>
-               </div>
-                <div class="form-group">
-                <h3>Vendas por mês</h3>
+                   <h3>Contatos x Contratos fechados</h3>
+                   <div class="form-group">
+                       
+                       <asp:GridView ID="GridView2" runat="server" CssClass="table table-striped"></asp:GridView>
+                       
+                
+                   
 
-                   <div id="chart_div"></div>
-            </div>
+                       <asp:GridView ID="GridView3" runat="server" CssClass="table table-striped"></asp:GridView>
+                   </div>
+               </div>
+                
 
             </div>
                     </div>                  

@@ -6,6 +6,8 @@ using System.Web.UI;
 using System.Web.UI.WebControls;
 using CredlineFinanceira.App_Code.Persistencia;
 using System.Data;
+using System.Web.Services;
+using System.Web.Script.Services;
 
 namespace CredlineFinanceira.Paginas.Listar
 {
@@ -26,7 +28,21 @@ namespace CredlineFinanceira.Paginas.Listar
         protected void Page_Load(object sender, EventArgs e)
         {
             Carrega("");
+            Carrega2();
         }
+
+
+        private void Carrega2()
+        {
+            ClienteBD bd = new ClienteBD();
+            DataSet ds = bd.SelectFaixa();
+            GridView2.DataSource = ds.Tables[0].DefaultView;
+            GridView2.DataBind();
+        }
+
+
+
+
 
         protected void GridView1_RowCommand(object sender, GridViewCommandEventArgs e)
         {

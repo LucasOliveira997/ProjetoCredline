@@ -12,36 +12,7 @@
     <script src="../../Scripts/jquery-3.3.1.min.js"></script>
     <link href="../../Content/bootstrap.min.css" rel="stylesheet" />
     
-    <script type="text/javascript" src="https://www.gstatic.com/charts/loader.js"></script>
-    <script type="text/javascript">
-        google.charts.load('current', {packages: ['corechart', 'bar']});
-google.charts.setOnLoadCallback(drawBasic);
-
-function drawBasic() {
-
-      var data = google.visualization.arrayToDataTable([
-        ['TIPO', 'Média por tipo',],
-        ['Consignado INSS', 15000],
-        ['Pessoal', 5700]
-      ]);
-
-      var options = {
-        title: 'Média de empréstimo por tipo',
-        chartArea: {width: '50%'},
-        hAxis: {
-          title: 'MÉDIA',
-          minValue: 0
-        },
-        vAxis: {
-          title: 'TIPO'
-        }
-      };
-
-      var chart = new google.visualization.BarChart(document.getElementById('chart_div'));
-
-      chart.draw(data, options);
-    }
-    </script>
+    
 
     <style>
         html, body{
@@ -54,7 +25,17 @@ function drawBasic() {
             background-color: darkorange;
             font-family:Arial;
         }
-       
+
+        #GridView2{
+            
+            width: 40%;
+        }
+
+        #GridView3{
+            
+            width: 40%;
+           
+        }
        
         
     </style>
@@ -195,8 +176,10 @@ function drawBasic() {
         <div>
             <div class="col-sm-12">
             <div id="gd" class="form-group">
+                <h3>
             <asp:Label ID="lblTitulo" runat="server" Text="Lista de vendas"></asp:Label>
-            <br />
+            </h3>
+                    <br />
             <asp:GridView ID="GridView1" runat="server" OnRowCommand="GridView1_RowCommand" AutoGenerateColumns="false"  CssClass="table table-stripped" GridLines="none">
                 <Columns>
                     
@@ -224,17 +207,17 @@ function drawBasic() {
                 </div>
                 </div>
             <div class="form-group">
-            <asp:Label ID="lblTitulo2" runat="server" Text="Valor médio por tipo"></asp:Label>
+            <h3><asp:Label ID="lblTitulo2" runat="server" Text="Valor médio por tipo"></asp:Label></h3>
             <br />
-            <asp:GridView ID="GridView2" runat="server" CssClass="gridview"></asp:GridView>
-                 <div id="chart_div"></div>
-                <br />
-                <br />
+            <asp:GridView ID="GridView2" runat="server" CssClass="table table-striped"></asp:GridView>
+                 
+            
             </div>
             <div class="form-group">
-                <asp:Label ID="lblTitulo3" runat="server" Text="Valor Total por mês"></asp:Label>
+                <h3>
+                <asp:Label ID="lblTitulo3" runat="server" Text="Valor Total por mês"></asp:Label></h3>
                 <br />
-                <asp:GridView ID="GridView3" runat="server" CssClass="gridview"></asp:GridView>
+                <asp:GridView ID="GridView3" runat="server" CssClass="table table-striped"></asp:GridView>
             </div>
         </div>
                </div>

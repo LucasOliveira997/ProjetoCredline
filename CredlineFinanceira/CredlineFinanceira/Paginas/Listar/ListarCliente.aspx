@@ -10,36 +10,7 @@
     <script src="../../Scripts/bootstrap.min.js"></script>
     <script src="../../Scripts/jquery-3.3.1.min.js"></script>
     <link href="../../Content/bootstrap.min.css" rel="stylesheet" />
-
-    <script type="text/javascript" src="https://www.gstatic.com/charts/loader.js"></script>
-    <script type="text/javascript">
-      google.charts.load('current', {'packages':['corechart']});
-      google.charts.setOnLoadCallback(drawChart);
-
-      function drawChart() {
-
-        var data = new google.visualization.DataTable();
-            data.addColumn('string', 'Topping');
-            data.addColumn('number', 'Slices');
-            data.addRows([
-                ['18-35', 2],
-                ['35-45', 4],
-                ['45-55', 5],
-                ['55-65', 3],
-                ['65+', 2]
-            ]);
-
-        var options = {
-                'title': 'Quantidade de empréstimo por faixa etária',
-                'width': 400,
-                'height': 300
-            };
-
-        var chart = new google.visualization.PieChart(document.getElementById('piechart'));
-
-        chart.draw(data, options);
-      }
-    </script>
+    
 
     <title>Lista de Clientes</title>
     <style>
@@ -52,6 +23,11 @@
             height: 100px;
             background-color: darkorange;
             font-family:Arial;
+        }
+
+        #GridView2{
+            text-align: center;
+            width: 40%;
         }
        
        
@@ -198,10 +174,7 @@
                         </ItemTemplate>
                     </asp:TemplateField>
                     <asp:TemplateField>
-                        <ItemTemplate>
-                            <asp:LinkButton ID="lbDeletar" CssClass="btn btn-danger" runat="server" CommandName="Deletar"
-                                CommandArgument='<%# Bind("cli_codigo")%>'>Excluir</asp:LinkButton>
-                        </ItemTemplate>
+                        
                     </asp:TemplateField>
                         <asp:BoundField DataField="cli_nome" HeaderText="Nome"/>
                     <asp:BoundField DataField="cli_telefone" HeaderText="Telefone"/>
@@ -222,7 +195,7 @@
                    <div class="form-group">
                 <h3>Vendas por faixa etária </h3>
 
-                   <div id="piechart" style="width: 900px; height: 500px;"></div>
+                       <asp:GridView ID="GridView2" runat="server" CssClass="table table-striped"></asp:GridView>
             </div>
                    
                 </div>

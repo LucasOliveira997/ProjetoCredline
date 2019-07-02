@@ -19,6 +19,8 @@ namespace CredlineFinanceira.Paginas.Login.Admin
         {
 
             Carrega();
+            Carrega2();
+            Carrega3();
 
             int Codigo = Convert.ToInt32(Session["ID"]);
             UsuarioBD bd = new UsuarioBD();
@@ -33,8 +35,25 @@ namespace CredlineFinanceira.Paginas.Login.Admin
             }
 
 
+
+
         }
 
+        private void Carrega2()
+        {
+            ClienteBD bd = new ClienteBD();
+            DataSet ds = bd.SelectContato();
+            GridView2.DataSource = ds.Tables[0].DefaultView;
+            GridView2.DataBind();
+        }
+
+        private void Carrega3()
+        {
+            ClienteBD bd = new ClienteBD();
+            DataSet ds = bd.SelectContrato();
+            GridView3.DataSource = ds.Tables[0].DefaultView;
+            GridView3.DataBind();
+        }
 
         private bool IsAdmin(bool Cargo)
         {

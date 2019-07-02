@@ -56,6 +56,58 @@ namespace CredlineFinanceira.App_Code.Persistencia
             objConexao.Dispose();
             return ds;
         }
+
+        // Select Faixa
+        public DataSet SelectFaixa()
+        {
+            DataSet ds = new DataSet();
+            System.Data.IDbConnection objConexao;
+            System.Data.IDbCommand objCommand;
+            System.Data.IDataAdapter objDataAdapter;
+            objConexao = Mapped.Connection();
+            objCommand = Mapped.Command("select if(year(cli_dataNascimento) >= 1984, '18 - 35', if(year(cli_dataNascimento) >= 1974, '35 - 45', if(year(cli_dataNascimento) >= 1964, '45 - 55', if(year(cli_dataNascimento) >= 1954, '55 - 65', if(year(cli_dataNascimento) >= 1924, '65+',  ''))))) as faixa, count(emp_codigo) as quantidade from cli_cliente c inner join ven_venda v on c.cli_codigo = v.cli_codigo group by faixa", objConexao);
+            objDataAdapter = Mapped.Adapter(objCommand);
+            objDataAdapter.Fill(ds);
+            objConexao.Close();
+            objCommand.Dispose();
+            objConexao.Dispose();
+            return ds;
+        }
+
+        // Select Contato 
+        public DataSet SelectContato()
+        {
+            DataSet ds = new DataSet();
+            System.Data.IDbConnection objConexao;
+            System.Data.IDbCommand objCommand;
+            System.Data.IDataAdapter objDataAdapter;
+            objConexao = Mapped.Connection();
+            objCommand = Mapped.Command("select count(cli_codigo) as clientes from cli_cliente", objConexao);
+            objDataAdapter = Mapped.Adapter(objCommand);
+            objDataAdapter.Fill(ds);
+            objConexao.Close();
+            objCommand.Dispose();
+            objConexao.Dispose();
+            return ds;
+        }
+
+        // Select Contrato 
+        public DataSet SelectContrato()
+        {
+            DataSet ds = new DataSet();
+            System.Data.IDbConnection objConexao;
+            System.Data.IDbCommand objCommand;
+            System.Data.IDataAdapter objDataAdapter;
+            objConexao = Mapped.Connection();
+            objCommand = Mapped.Command("select count(emp_tipo) as vendas from emp_emprestimo", objConexao);
+            objDataAdapter = Mapped.Adapter(objCommand);
+            objDataAdapter.Fill(ds);
+            objConexao.Close();
+            objCommand.Dispose();
+            objConexao.Dispose();
+            return ds;
+        }
+
         //select
 
         public Cliente Select(int CodigoCLI)
@@ -152,7 +204,8 @@ namespace CredlineFinanceira.App_Code.Persistencia
             objCommand.Dispose();
             objConexao.Dispose();
             return ds;
-        }
+        }
+
 
 
         //construtor
